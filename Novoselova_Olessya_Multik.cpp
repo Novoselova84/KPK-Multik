@@ -83,12 +83,15 @@ void Hello ()
     while (t <= 150)
         {
         DrawBascground ();
+
         txSetColor     (RGB (128, 0, 0), 5);
         txSelectFont   ("Gabriola", 300);
         txDrawText     (20 , 300 - t*1, 1210, 785 - t*1, "Привет, друзья!");
+
         DrawSun        (600, 340, 1.5, 1.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/40)%2 * 1, 0, (t/30)%2 * 1);
-        txSleep        (SleepTime);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -103,19 +106,20 @@ void Loneliness ()
     while (t <= 300)
         {
         DrawBascground ();
-        DrawOcean      ( 15      , 320, 1  , 1  , RGB (77,  84, 225));
+        DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225));
         DrawSmallCloud (500 + t/2, 100, 1  , 1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1  , 1  , TX_WHITE, 0, 0);
-        DrawSun        (120      , 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),TX_WHITE,
+        DrawSun        (120,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0), TX_WHITE,
                         RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 0);
         DrawWhale      (800 - t/2, 400, 0.7, 0.7, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/40)%2 * 1);
         DrawWhale      (600 - t/2, 500, 0.8, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/40)%2 * 1, (t/40)%2 * 1, (t/40)%2 * 1);
         DrawWhale      (800 - t/2, 600, 1  , 1  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/40)%2 * 1);
-        DrawIsland     (150      , 650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2*1);
+        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2*1);
         DrawMan        (350 + t/2, 550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE,
                         RGB (0, 128, 128), (t/20)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1, 0);
-        DrawPalma      (200      , 720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/30)%2 * 1, 0);
-        txSleep        (SleepTime);
+        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/30)%2 * 1, 0);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -130,20 +134,21 @@ void Hope ()
     while (t <= 300)
         {
         DrawBascground ();
-        DrawOcean      (  15      , 320, 1,   1  , RGB ( 77, 84, 225));
+        DrawOcean      (  15,       320, 1,   1  , RGB ( 77, 84, 225));
         DrawSmallCloud ( 500 + t/2, 100, 1,   1  , TX_WHITE, 0);
         DrawBigCloud   ( 100 + t/2,  50, 1,   1  , TX_WHITE, 0, 0);
-        DrawSun        (1100      , 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
+        DrawSun        (1100,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), 0, (t/40)%2 * 1, 0, 0);
         DrawShip       ( 250 + t/2, 300, 0.3, 0.2, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 0, 0, 0);
         DrawWhale      ( 800 - t/2, 500, 0.9, 0.9, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawIsland     ( 150      , 650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
-        DrawMan        ( 600      , 550 - (t/10)%2 * 10, 1, 1, RGB (192, 192, 192), TX_RED, TX_WHITE,
+        DrawIsland     ( 150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
+        DrawMan        ( 600,       550 - (t/10)%2 * 10, 1, 1, RGB (192, 192, 192), TX_RED, TX_WHITE,
                         RGB (0, 128, 128), (t/20)%2 * 1, 0, (t/30)%2 * 1, 0);
-        DrawTorch      ( 500      , 520 - (t/10)%2 * 10, 1  , 1  , RGB (108,  54, 0), RGB (255, 0, 0), (t/20)%2 * 1);
-        DrawTreasures  ( 900      , 650                , 1  , 1  , RGB (128, 128, 0), TX_YELLOW, TX_RED, 0, 0);
-        DrawPalma      ( 200      , 720                , 1.2, 1.2, RGB (108,  54, 0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
-        txSleep        (SleepTime);
+        DrawTorch      ( 500,       520 - (t/10)%2 * 10, 1  , 1  , RGB (108,  54, 0), RGB (255, 0, 0), (t/20)%2 * 1);
+        DrawTreasures  ( 900,       650,                 1  , 1  , RGB (128, 128, 0), TX_YELLOW, TX_RED, 0, 0);
+        DrawPalma      ( 200,       720,                 1.2, 1.2, RGB (108,  54, 0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -158,18 +163,19 @@ void Fear ()
     while (t <= 400)
         {
         DrawBascground ();
-        DrawOcean      (  15      , 320, 1  , 1  , RGB (77, 84, 225));
+        DrawOcean      (  15,       320, 1  , 1  , RGB (77, 84, 225));
         DrawSmallCloud ( 500 + t/2, 100, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1);
         DrawBigCloud   ( 100 + t/2,  50, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawSun        (1100      , 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
+        DrawSun        (1100,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
                         RGB (66, 132, 0),TX_WHITE, RGB (128, 0, 255), 0, (t/30)%2 * 1, (t/30)%2 * 1, 0);
         DrawShip       ( 400 + t/2, 300, 0.7, 0.6, TX_GREY, RGB (255, 236, 236), RGB (164, 82, 0),
                         RGB (63, 63, 63), RGB (63, 63, 63), TX_GREY, 0, 0, 1);
-        DrawIsland     ( 150      , 650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawMan        ( 600      , 550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE,RGB (0, 128, 128),1, 0, 0, (t/40)%2 * 1);
-        DrawTreasures  ( 900      , 650, 1  , 1  , RGB (128, 128,   0), TX_YELLOW, TX_RED, 1, (t/50)%2 * 1);
-        DrawPalma      ( 200      , 720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/40)%2 * 1, 0);
-        txSleep        (SleepTime);
+        DrawIsland     ( 150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
+        DrawMan        ( 600,       550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE,RGB (0, 128, 128),1, 0, 0, (t/40)%2 * 1);
+        DrawTreasures  ( 900,       650, 1  , 1  , RGB (128, 128,   0), TX_YELLOW, TX_RED, 1, (t/50)%2 * 1);
+        DrawPalma      ( 200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/40)%2 * 1, 0);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -184,19 +190,20 @@ void Salvation ()
     while (t <= 300)
         {
         DrawBascground ();
-        DrawOcean      ( 15      , 320                , 1  , 1  , RGB (77,  84, 225));
-        DrawSmallCloud (500 + t/2, 100                , 1  , 1  , TX_WHITE, 0);
-        DrawBigCloud   (100 + t/2,  50                , 1  , 1  , TX_WHITE, 0, 0);
-        DrawSun        (120      , 130                , 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
+        DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225));
+        DrawSmallCloud (500 + t/2, 100, 1  , 1  , TX_WHITE, 0);
+        DrawBigCloud   (100 + t/2,  50, 1  , 1  , TX_WHITE, 0, 0);
+        DrawSun        (120,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0);
-        DrawShip       (450 + t/2, 300 + t*0.2        , 0.6, 0.6, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN,
+        DrawShip       (450 + t/2, 300 + t*0.2, 0.6, 0.6, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN,
                         TX_GREY, 0, (t/40)%2 * 1, 0);
-        DrawIsland     (150      , 650                , 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
-        DrawMan        (600      , 550 - (t/10)%2 * 10, 1  , 1  , RGB (192, 192, 192), TX_RED,
-                        TX_WHITE,RGB (  0, 128, 128), (t/40)%2 * 1, (t/40)%2 * 1, (t/40)%2 * 1, 0);
-        DrawTreasures  (900      , 650                , 1  , 1  , RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
-        DrawPalma      (200      , 720                , 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1 );
-        txSleep        (SleepTime);
+        DrawIsland     (150,       650,                 1, 1, RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
+        DrawMan        (600,       550 - (t/10)%2 * 10, 1, 1, RGB (192, 192, 192), TX_RED,
+                        TX_WHITE, RGB (0, 128, 128), (t/40)%2 * 1, (t/40)%2 * 1, (t/40)%2 * 1, 0);
+        DrawTreasures  (900,       650, 1  , 1  , RGB (128, 128, 0), TX_YELLOW, TX_RED, 0, 0);
+        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54, 0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1 );
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -211,19 +218,20 @@ void Happiness ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      ( 15      , 320, 1,   1  , RGB (77, 84, 225));
+        DrawOcean      ( 15,       320, 1,   1  , RGB (77, 84, 225));
         DrawSmallCloud (500 + t/2, 100, 1,   1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1,   1  , TX_WHITE, 0, 0);
-        DrawSun        (600      , 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
+        DrawSun        (600,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0);
         DrawWhale      (500 - t/2, 360, 0.5, 0.6, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawShip       (700      , 450, 0.8, 0.8, TX_GREY, TX_YELLOW , RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 1, 0);
-        DrawIsland     (150      , 650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawMan        (620      , 310, 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE,RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
-        DrawTreasures  (750      , 385, 0.8, 0.8, RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
-        DrawIsland     (150      , 650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawPalma      (200      , 720, 1.2, 1.2, RGB (108, 54, 0), RGB (0, 128, 0), TX_BROWN, 0,(t/40)%2 * 1);
-        txSleep        (SleepTime);
+        DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW , RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 1, 0);
+        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
+        DrawMan        (620,       310, 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE,RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
+        DrawTreasures  (750,       385, 0.8, 0.8, RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
+        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
+        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -238,20 +246,21 @@ void Enjoyment ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      ( 15      , 320,  1  ,   1  , RGB (77,  84,  225));
+        DrawOcean      ( 15,       320,  1  ,   1  , RGB (77, 84, 225));
         DrawSmallCloud (500 + t/2, 100,  1  ,   1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50,  1  ,   1  , TX_WHITE, 0, 0);
         DrawSmallCloud (700 + t/2,  50,  1  ,   1  , TX_WHITE, 0);
         DrawBigCloud   (300 + t/2, 100,  1  ,   1  , TX_WHITE, 0, 0);
-        DrawSun        (600      , 130,  0.5,   0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
+        DrawSun        (600,       130,  0.5,   0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 1);
-        DrawWhale      (800 - t/2, 500, 0.7 , 0.8  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawWhale      (600 - t/2, 430, 0.6 , 0.8  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawWhale      (700 - t/2, 600, 0.9 , 1    , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawShip       (750 + t/2, 300, 0.3 , 0.3  , TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 0, 0, 0);
-        DrawIsland     (150      , 650, 1   , 1    , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawPalma      (200      , 720, 1.2 , 1.2  , RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, 0, (t/30)%2 * 1);
-        txSleep        (SleepTime);
+        DrawWhale      (800 - t/2, 500, 0.7, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
+        DrawWhale      (600 - t/2, 430, 0.6, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
+        DrawWhale      (700 - t/2, 600, 0.9, 1  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
+        DrawShip       (750 + t/2, 300, 0.3, 0.3, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 0, 0, 0);
+        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128, 0), TX_YELLOW, 1);
+        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54, 0), RGB (0, 128, 0), TX_BROWN, 0, (t/30)%2 * 1);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -266,17 +275,19 @@ void TobeContinued ()
     while (t <= 100)
         {
         DrawBascground ();
+
         txSetColor     (RGB (255, 0, 128), 5);
         txSelectFont   ("Gabriola", 220);
         txDrawText     (20 , 200 - t*2, 1210, 585 - t*2, "Продолжение следует..");
-        txSleep        (SleepTime);
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
     txEnd ();
     }
 
-void Author         ()
+void Author ()
     {
     txBegin ();
 
@@ -284,14 +295,16 @@ void Author         ()
     while (t <= 90)
         {
         DrawBascground ();
+
         txSetColor     (RGB (255, 0, 128), 5);
         txSelectFont   ("Gabriola", 220);
-        txDrawText     (20 , 200 - t*2, 1210, 300 - t*2, "Автор:");
-        txDrawText     (20 , 300 - t*2, 1210, 400 - t*2, " Олеся Новоселова");
-        txDrawText     (20 , 400 - t*2, 1210, 500 - t*2, "МАОУ МЛ №1");
-        txDrawText     (20 , 500 - t*2, 1210, 600 - t*2, "г. Магнитогорска");
-        txDrawText     (20 , 600 - t*2, 1210, 700 - t*2, "2021 год");
-        txSleep        (SleepTime);
+        txDrawText     (20, 200 - t*2, 1210, 300 - t*2, "Автор:");
+        txDrawText     (20, 300 - t*2, 1210, 400 - t*2, " Олеся Новоселова");
+        txDrawText     (20, 400 - t*2, 1210, 500 - t*2, "МАОУ МЛ №1");
+        txDrawText     (20, 500 - t*2, 1210, 600 - t*2, "г. Магнитогорска");
+        txDrawText     (20, 600 - t*2, 1210, 700 - t*2, "2021 год");
+
+        txSleep (SleepTime);
         t ++ ;
         }
 
@@ -300,8 +313,9 @@ void Author         ()
 
 void DrawBascground ()
     {
-    txClear         ();
-    DrawTV          ();
+    txClear ();
+
+    DrawTV ();
     }
 
 void DrawTV ()
@@ -371,17 +385,17 @@ void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor,COLORR
     else
        txSetFillColor (sunColor);
 
-    txCircle (x            , y            ,     100*sizeX);
+    txCircle (x, y , 100*sizeX);
     txLine   (x - 190*sizeX, y -  40*sizeY, x - 100*sizeX, y -  20*sizeY);
-    txLine   (x - 200*sizeX, y            , x - 100*sizeX, y            );
+    txLine   (x - 200*sizeX, y,             x - 100*sizeX, y);
     txLine   (x - 200*sizeX, y +  70*sizeY, x -  95*sizeX, y +  30*sizeY);
     txLine   (x - 180*sizeX, y + 140*sizeY, x -  80*sizeX, y +  60*sizeY);
     txLine   (x - 150*sizeX, y + 210*sizeY, x -  60*sizeX, y +  80*sizeY);
     txLine   (x - 100*sizeX, y + 270*sizeY, x -  30*sizeX, y +  95*sizeY);
-    txLine   (x -  20*sizeX, y + 270*sizeY, x            , y + 100*sizeY);
+    txLine   (x -  20*sizeX, y + 270*sizeY, x,             y + 100*sizeY);
     txLine   (x +  50*sizeX, y + 250*sizeY, x +  20*sizeX, y +  95*sizeY);
     txLine   (x + 200*sizeX, y -  40*sizeY, x + 100*sizeX, y -  20*sizeY);
-    txLine   (x + 205*sizeX, y            , x + 105*sizeX, y            );
+    txLine   (x + 205*sizeX, y,             x + 105*sizeX, y);
     txLine   (x + 205*sizeX, y +  70*sizeY, x + 100*sizeX, y +  30*sizeY);
     txLine   (x + 220*sizeX, y + 140*sizeY, x +  80*sizeX, y +  60*sizeY);
     txLine   (x + 190*sizeX, y + 210*sizeY, x +  60*sizeX, y +  80*sizeY);
@@ -427,20 +441,21 @@ void DrawBigCloud (int x, int y, double sizeX, double sizeY, COLORREF bigCloudCo
     if (darkBigCloud < 1)
         {
         txSetColor (bigCloudColor, 25);
-        txArc (x            , y           , x + 100*sizeX, y + 30*sizeY,   0, 180);
-        txArc (x + 100*sizeX, y           , x + 250*sizeX, y + 40*sizeY,   0, 180);
-        txArc (x            , y           , x +  50*sizeX, y + 30*sizeY, 180, 180);
-        txArc (x +  50*sizeX, y           , x + 150*sizeX, y + 30*sizeY, 180, 180);
+        txArc (x,             y,            x + 100*sizeX, y + 30*sizeY,   0, 180);
+        txArc (x + 100*sizeX, y,            x + 250*sizeX, y + 40*sizeY,   0, 180);
+        txArc (x,             y,            x +  50*sizeX, y + 30*sizeY, 180, 180);
+        txArc (x +  50*sizeX, y,            x + 150*sizeX, y + 30*sizeY, 180, 180);
         txArc (x + 150*sizeX, y + 10*sizeY, x + 250*sizeX, y + 30*sizeY, 180, 180);
         }
     else
         {
         txSetColor (RGB (97, 97, 97), 40);
-        txArc (x            , y           , x + 100*sizeX, y + 30*sizeY,   0, 180);
-        txArc (x + 100*sizeX, y           , x + 250*sizeX, y + 40*sizeY,   0, 180);
-        txArc (x            , y           , x +  50*sizeX, y + 30*sizeY, 180, 180);
-        txArc (x +  50*sizeX, y           , x + 150*sizeX, y + 30*sizeY, 180, 180);
+        txArc (x,             y,            x + 100*sizeX, y + 30*sizeY,   0, 180);
+        txArc (x + 100*sizeX, y,            x + 250*sizeX, y + 40*sizeY,   0, 180);
+        txArc (x,             y,            x +  50*sizeX, y + 30*sizeY, 180, 180);
+        txArc (x +  50*sizeX, y,            x + 150*sizeX, y + 30*sizeY, 180, 180);
         txArc (x + 150*sizeX, y + 10*sizeY, x + 250*sizeX, y + 30*sizeY, 180, 180);
+
         txSetColor     (TX_GRAY, 2);
         txSetFillColor (RGB (255, 38, 38));
         POINT lightning [7] = {{ROUND (x + 100*sizeX), ROUND (y +  (40 + hit*50)*sizeY)},
@@ -468,17 +483,17 @@ void DrawSmallCloud (int x, int y, double sizeX, double sizeY, COLORREF smallClo
     if (darkSmallCloud < 1)
         {
         txSetColor (smallCloudColor, 30);
-        txArc (x           , y, x +  80*sizeX, y + 30*sizeY,   0, 180);
+        txArc (x,            y, x +  80*sizeX, y + 30*sizeY,   0, 180);
         txArc (x + 80*sizeX, y, x + 120*sizeX, y + 40*sizeY,   0, 180);
-        txArc (x           , y, x +  30*sizeX, y + 30*sizeY, 180, 180);
+        txArc (x,            y, x +  30*sizeX, y + 30*sizeY, 180, 180);
         txArc (x + 30*sizeX, y, x + 120*sizeX, y + 40*sizeY, 180, 180);
         }
     else
         {
         txSetColor (RGB (97, 97, 97), 35);
-        txArc (x           , y, x +  80*sizeX, y + 30*sizeY,   0, 180);
+        txArc (x,            y, x +  80*sizeX, y + 30*sizeY,   0, 180);
         txArc (x + 80*sizeX, y, x + 120*sizeX, y + 40*sizeY,   0, 180);
-        txArc (x           , y, x +  30*sizeX, y + 30*sizeY, 180, 180);
+        txArc (x,            y, x +  30*sizeX, y + 30*sizeY, 180, 180);
         txArc (x + 30*sizeX, y, x + 120*sizeX, y + 40*sizeY, 180, 180);
 
         txSetColor     (TX_GRAY, 2);
@@ -505,6 +520,7 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     txSetColor     (TX_GRAY, 4);
     txSetFillColor (flagColor);
     txRectangle    (x + 35*sizeX, y - 250*sizeY, x + (130 + deception*40)*sizeX, y - 180*sizeY);
+
     txSelectFont   ("Arial", 40*sizeX, 0, FW_BOLD);
 
     int x2 = MIN (ROUND (x +  45*sizeX), ROUND (x + 120*sizeX));
@@ -515,15 +531,16 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     if (deception > 0)
         txDrawText (x2 - 20,  y2, x3 + deception*40, y3, "Pirates");
     else
-        txDrawText (x2     ,  y2, x3               , y3, "C++");
+        txDrawText (x2,       y2, x3,                y3, "C++");
 
     txSetColor     (TX_GRAY, 3);
     txSetFillColor (shipColor);
-    POINT ship          [4] = {{ROUND (x - 120*sizeX), ROUND (y + 150*sizeY)},
-                               {ROUND (x - 190*sizeX), ROUND (y)            },
-                               {ROUND (x + 230*sizeX), ROUND (y)            },
-                               {ROUND (x + 180*sizeX), ROUND (y + 150*sizeY)}};
+    POINT ship [4] = {{ROUND (x - 120*sizeX), ROUND (y + 150*sizeY)},
+                      {ROUND (x - 190*sizeX), ROUND (y)},
+                      {ROUND (x + 230*sizeX), ROUND (y)},
+                      {ROUND (x + 180*sizeX), ROUND (y + 150*sizeY)}};
     txPolygon (ship, 4);
+
     txSelectFont ("Arial", 40*sizeX, 0, FW_BOLD);
 
     int x0 = MIN (ROUND (x - 110*sizeX), ROUND (x +  80*sizeX));
@@ -537,23 +554,23 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
         txDrawText (x0, y0, x1, y1, "SALVATION");
 
     txSetFillColor (starboardSailColor);
-    POINT starboardSail [3] = {{ROUND (x +   35               *sizeX), ROUND (y)            },
+    POINT starboardSail [3] = {{ROUND (x +   35               *sizeX), ROUND (y)},
                                {ROUND (x +   35               *sizeX), ROUND (y - 180*sizeY)},
                                {ROUND (x + (230 - SetSail*200)*sizeX), ROUND (y -  10*sizeY)}};
     txPolygon (starboardSail, 3);
 
     txSetFillColor (portSailColor);
-    POINT portSail      [3] = {{ROUND (x -    5               *sizeX), ROUND (y)            },
-                               {ROUND (x - (200 - SetSail*200)*sizeX), ROUND (y -  10*sizeY)},
-                               {ROUND (x -    5               *sizeX), ROUND (y - 250*sizeY)}};
+    POINT portSail [3] = {{ROUND (x -    5               *sizeX), ROUND (y)},
+                          {ROUND (x - (200 - SetSail*200)*sizeX), ROUND (y -  10*sizeY)},
+                          {ROUND (x -    5               *sizeX), ROUND (y - 250*sizeY)}};
     txPolygon (portSail, 3);
 
     txSetColor     (TX_GRAY, 5);
     txSetFillColor (anchorColor);
-    txLine (x + 130*sizeX, y + ( 25 + dropAnchor*100)*sizeY, x + 130*sizeX, y + (125 + dropAnchor*100)*sizeY);
-    txLine (x + 120*sizeX, y + ( 45 + dropAnchor*100)*sizeY, x + 140*sizeX, y + ( 45 + dropAnchor*100)*sizeY);
-    txArc  (x + 105*sizeX, y + (100 + dropAnchor*100)*sizeY, x + 155*sizeX, y + (125 + dropAnchor*100)*sizeY , 180, 180);
-    txArc  (x + 105*sizeX, y + (100 + dropAnchor*100)*sizeY, x + 155*sizeX, y + (120 + dropAnchor*100)*sizeY , 180, 180);
+    txLine (x + 130*sizeX, y +  (25 + dropAnchor*100)*sizeY, x + 130*sizeX, y + (125 + dropAnchor*100)*sizeY);
+    txLine (x + 120*sizeX, y +  (45 + dropAnchor*100)*sizeY, x + 140*sizeX, y +  (45 + dropAnchor*100)*sizeY);
+    txArc  (x + 105*sizeX, y + (100 + dropAnchor*100)*sizeY, x + 155*sizeX, y + (125 + dropAnchor*100)*sizeY, 180, 180);
+    txArc  (x + 105*sizeX, y + (100 + dropAnchor*100)*sizeY, x + 155*sizeX, y + (120 + dropAnchor*100)*sizeY, 180, 180);
     }
 
 void DrawWhale (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, COLORREF eyeColor, COLORREF fountainColor,
@@ -563,20 +580,20 @@ void DrawWhale (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, C
     txSetFillColor (whaleColor);
     txPie          (x, y, x + 300*sizeX, y - 50*sizeY, (sizeY >= 0)? 0 : 180, 180);
 
-    POINT leftFin   [3] = {{ROUND (x +   80                  *sizeX), ROUND (y - 30*sizeY)},
-                           {ROUND (x +  140                  *sizeX), ROUND (y - 30*sizeY)},
-                           {ROUND (x + (190 - finMovement*50)*sizeX), ROUND (y + 10*sizeY)}};
+    POINT leftFin [3] = {{ROUND (x +   80                  *sizeX), ROUND (y - 30*sizeY)},
+                         {ROUND (x +  140                  *sizeX), ROUND (y - 30*sizeY)},
+                         {ROUND (x + (190 - finMovement*50)*sizeX), ROUND (y + 10*sizeY)}};
     txPolygon (leftFin, 3);
 
-    POINT rightFin  [3] = {{ROUND (x +   85                  *sizeX), ROUND (y - 48*sizeY)},
-                           {ROUND (x + (150 - finMovement*50)*sizeX), ROUND (y - 60*sizeY)},
-                           {ROUND (x +  120                  *sizeX), ROUND (y - 50*sizeY)}};
+    POINT rightFin [3] = {{ROUND (x +   85                  *sizeX), ROUND (y - 48*sizeY)},
+                          {ROUND (x + (150 - finMovement*50)*sizeX), ROUND (y - 60*sizeY)},
+                          {ROUND (x +  120                  *sizeX), ROUND (y - 50*sizeY)}};
     txPolygon (rightFin, 3);
 
     POINT caudalFin [4] = {{ROUND (x +  280            *sizeX), ROUND (y -  35            *sizeY)},
                            {ROUND (x + (330 + turbo*20)*sizeX), ROUND (y - (50 + turbo*20)*sizeY)},
                            {ROUND (x + (325 + turbo*15)*sizeX), ROUND (y - (30           )*sizeY)},
-                           {ROUND (x + (340 + turbo*20)*sizeX), ROUND (y +       turbo*20)       }};
+                           {ROUND (x + (340 + turbo*20)*sizeX), ROUND (y +      (turbo*20)*sizeY)}};
     txPolygon (caudalFin, 4);
 
     txSetFillColor (eyeColor);
@@ -601,7 +618,7 @@ void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor,
     int y0 = MIN (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
     int y1 = MAX (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
 
-    if (Clear > 0 )
+    if (Clear > 0)
         txDrawText (x0, y0, x1, y1, " ");
     else
         txDrawText (x0, y0, x1, y1, "SOS!!!");
@@ -616,14 +633,14 @@ void DrawPalma (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, C
 
     txSetColor     (TX_LIGHTGRAY, 2);
     txSetFillColor (leavesColor);
-    POINT one   [3] = {{ROUND (x - 130*sizeX), ROUND (y - 180*sizeY)},
-                       {ROUND (x - 110*sizeX), ROUND (y - 235*sizeY)},
-                       {ROUND (x -  10*sizeX), ROUND (y - 239*sizeY)}};
+    POINT one [3] = {{ROUND (x - 130*sizeX), ROUND (y - 180*sizeY)},
+                     {ROUND (x - 110*sizeX), ROUND (y - 235*sizeY)},
+                     {ROUND (x -  10*sizeX), ROUND (y - 239*sizeY)}};
     txPolygon (one, 3);
 
-    POINT two   [3] = {{ROUND (x -   5*sizeX), ROUND (y - 239*sizeY)},
-                       {ROUND (x + 120*sizeX), ROUND (y - 260*sizeY)},
-                       {ROUND (x +  90*sizeX), ROUND (y - 290*sizeY)}};
+    POINT two [3] = {{ROUND (x -   5*sizeX), ROUND (y - 239*sizeY)},
+                     {ROUND (x + 120*sizeX), ROUND (y - 260*sizeY)},
+                     {ROUND (x +  90*sizeX), ROUND (y - 290*sizeY)}};
     txPolygon (two, 3);
 
     POINT three [3] = {{ROUND (x - 150*sizeX), ROUND (y - 250*sizeY)},
@@ -631,16 +648,16 @@ void DrawPalma (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, C
                        {ROUND (x -  10*sizeX), ROUND (y - 239*sizeY)}};
     txPolygon (three, 3);
 
-    POINT four  [3] = {{ROUND (x -   5*sizeX), ROUND (y - 239*sizeY)},
-                       {ROUND (x +  90*sizeX), ROUND (y - 190*sizeY)},
-                       {ROUND (x + 120*sizeX), ROUND (y - 239*sizeY)}};
+    POINT four [3] = {{ROUND (x -   5*sizeX), ROUND (y - 239*sizeY)},
+                      {ROUND (x +  90*sizeX), ROUND (y - 190*sizeY)},
+                      {ROUND (x + 120*sizeX), ROUND (y - 239*sizeY)}};
     txPolygon (four, 3);
 
     txSetColor     (TX_GRAY, 2);
     txSetFillColor (coconutsColor);
     txCircle (x -  10*sizeX, y -  225                      *sizeY, (15 + magnificationCoconuts*10)*sizeX);
     txCircle (x -  30*sizeX, y -  210                      *sizeY, (15 + magnificationCoconuts*10)*sizeX);
-    txCircle (x            , y -  230                      *sizeY, (15 + magnificationCoconuts*10)*sizeX);
+    txCircle (x,             y -  230                      *sizeY, (15 + magnificationCoconuts*10)*sizeX);
     txCircle (x -  10*sizeX, y -  215                      *sizeY, (15 + magnificationCoconuts*10)*sizeX);
     txCircle (x +  10*sizeX, y - (205 - fallingCoconut*100)*sizeY, (15 + magnificationCoconuts*10)*sizeX);
     }
@@ -654,10 +671,10 @@ void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxC
 
     txSetColor     (TX_DARKGRAY, 3);
     txSetFillColor (chestLidColor);
-    POINT cap [4] = {{ROUND (x)            , ROUND (y - ( 5 + chestLidUp*20)*sizeY)},
+    POINT cap [4] = {{ROUND (x),             ROUND (y -  (5 + chestLidUp*20)*sizeY)},
                      {ROUND (x +  25*sizeX), ROUND (y - (40 + chestLidUp*20)*sizeY)},
                      {ROUND (x +  85*sizeX), ROUND (y - (40 + chestLidUp*20)*sizeY)},
-                     {ROUND (x + 110*sizeX), ROUND (y - ( 5 + chestLidUp*20)*sizeY)}};
+                     {ROUND (x + 110*sizeX), ROUND (y -  (5 + chestLidUp*20)*sizeY)}};
     txPolygon (cap, 4);
 
     txSetColor   ($Color);
@@ -671,27 +688,27 @@ void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxC
     if (pirates > 0)
         txDrawText (x0 - 25, y0, x1 + 25, y1, "junk");
     else
-        txDrawText (x0     , y0, x1     , y1, "$");
+        txDrawText (x0,      y0, x1,      y1, "$");
     }
 
 void DrawTorch (int x, int y, double sizeX, double sizeY, COLORREF stickColor, COLORREF fireColor, double signal)
     {
     txSetColor     (TX_GREY, 2);
     txSetFillColor (stickColor);
-    POINT stick [4] = {{ROUND (x)           , ROUND (y)           },
-                       {ROUND (x)           , ROUND (y - 30*sizeY)},
+    POINT stick [4] = {{ROUND (x),            ROUND (y)},
+                       {ROUND (x),            ROUND (y - 30*sizeY)},
                        {ROUND (x + 20*sizeX), ROUND (y - 30*sizeY)},
                        {ROUND (x + 20*sizeX), ROUND (y + 10*sizeY)}};
     txPolygon (stick, 4);
 
     txSetColor     (RGB (255, 0, 0));
     txSetFillColor (fireColor);
-    POINT fire  [6] = {{ROUND (x)                         , ROUND (y -  30             *sizeY)},
-                       {ROUND (x - (10 + signal*20)*sizeX), ROUND (y - (50 + signal*20)*sizeY)},
-                       {ROUND (x +  10             *sizeX), ROUND (y - (70 + signal*20)*sizeY)},
-                       {ROUND (x + (30 + signal*20)*sizeX), ROUND (y - (50 + signal*20)*sizeY)},
-                       {ROUND (x +  20             *sizeX), ROUND (y -  30             *sizeY)},
-                       {ROUND (x)                         , ROUND (y -  30             *sizeY)}};
+    POINT fire [6] = {{ROUND (x),                          ROUND (y -  30             *sizeY)},
+                      {ROUND (x - (10 + signal*20)*sizeX), ROUND (y - (50 + signal*20)*sizeY)},
+                      {ROUND (x +  10             *sizeX), ROUND (y - (70 + signal*20)*sizeY)},
+                      {ROUND (x + (30 + signal*20)*sizeX), ROUND (y - (50 + signal*20)*sizeY)},
+                      {ROUND (x +  20             *sizeX), ROUND (y -  30             *sizeY)},
+                      {ROUND (x),                          ROUND (y -  30             *sizeY)}};
     txPolygon (fire, 6);
     }
 
@@ -727,32 +744,32 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
                            {ROUND (x - 20*sizeX), ROUND (y +  20                   *sizeY)}};
     txPolygon (rightHand, 4);
 
-    POINT leftHand  [4] = {{ROUND (x + 20*sizeX), ROUND (y +  40                  *sizeY)},
-                           {ROUND (x + 20*sizeX), ROUND (y +  20                  *sizeY)},
-                           {ROUND (x + 80*sizeX), ROUND (y - (30 - leftHandDn*100)*sizeY)},
-                           {ROUND (x + 80*sizeX), ROUND (y - (20 - leftHandDn*100)*sizeY)}};
+    POINT leftHand [4] = {{ROUND (x + 20*sizeX), ROUND (y +  40                  *sizeY)},
+                          {ROUND (x + 20*sizeX), ROUND (y +  20                  *sizeY)},
+                          {ROUND (x + 80*sizeX), ROUND (y - (30 - leftHandDn*100)*sizeY)},
+                          {ROUND (x + 80*sizeX), ROUND (y - (20 - leftHandDn*100)*sizeY)}};
     txPolygon (leftHand, 4);
 
     txSetColor     (TX_GRAY, 1);
     txSetFillColor (legsColor);
 
-    POINT body      [5] = {{ROUND (x -   (40 - legsStep*35)*sizeX), ROUND (y + 180*sizeY)},
-                           {ROUND (x -    20               *sizeX), ROUND (y + 100*sizeY)},
-                           {ROUND (x +    20               *sizeX), ROUND (y + 100*sizeY)},
-                           {ROUND (x +   (40 - legsStep*35)*sizeX), ROUND (y + 180*sizeY)},
-                           {ROUND (x)                             , ROUND (y + 130*sizeY)}};
+    POINT body [5] = {{ROUND (x -   (40 - legsStep*35)*sizeX), ROUND (y + 180*sizeY)},
+                      {ROUND (x -    20               *sizeX), ROUND (y + 100*sizeY)},
+                      {ROUND (x +    20               *sizeX), ROUND (y + 100*sizeY)},
+                      {ROUND (x +   (40 - legsStep*35)*sizeX), ROUND (y + 180*sizeY)},
+                      {ROUND (x),                              ROUND (y + 130*sizeY)}};
     txPolygon (body, 5);
 
-    txSetColor ( TX_YELLOW, 5);
-    txSelectFont   ("Arial", 20, 0, FW_BOLD);
+    txSetColor   (TX_YELLOW, 5);
+    txSelectFont ("Arial", 20, 0, FW_BOLD);
 
-    if (rightHandDn > 0 or leftHandDn > 0 )
-        txDrawText (x + 70,  y - 150, x + 200, y + 50, "SOS!!!");
+    if (rightHandDn > 0 or leftHandDn > 0)
+        txDrawText (x + 70, y - 150, x + 200, y + 50, "SOS!!!");
     else
-        txDrawText (x - 70,  y - 150, x + 130, y + 50, " ");
+        txDrawText (x - 70, y - 150, x + 130, y + 50, " ");
 
     if (Mad > 0)
-        txDrawText (x + 70,  y - 150, x + 200, y + 50, "НЕ ГУБИТЕ!");
+        txDrawText (x + 70, y - 150, x + 200, y + 50, "НЕ ГУБИТЕ!");
     else
-        txDrawText (x + 70,  y - 150, x + 200, y + 50, " ");
+        txDrawText (x + 70, y - 150, x + 200, y + 50, " ");
     }
