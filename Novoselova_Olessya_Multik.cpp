@@ -37,6 +37,8 @@ void DrawTV         ();
 
 void Hello          ();
 
+void TitleMultika   ();
+
 void Loneliness     ();
 
 void Hope           ();
@@ -59,6 +61,7 @@ int main            ()
     txCreateWindow (1400, 800);
 
     Hello           ();
+    TitleMultika    ();
     Loneliness      ();
     Hope            ();
     Fear            ();
@@ -80,7 +83,7 @@ void Hello ()
     txBegin ();
 
     int t = 0;
-    while (t <= 150)
+    while (t <= 120)
         {
         DrawBascground ();
 
@@ -90,6 +93,42 @@ void Hello ()
 
         DrawSun        (600, 340, 1.5, 1.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/40)%2 * 1, 0, (t/30)%2 * 1);
+
+        txSleep (SleepTime);
+        t ++ ;
+        }
+
+    txEnd ();
+    }
+
+void TitleMultika ()
+    {
+    txBegin ();
+
+    int t = 0;
+    while (t <= 80)
+        {
+        DrawBascground ();
+
+        txSetColor     (RGB (255, 0, 128), 5);
+        txSelectFont   ("Gabriola", 200);
+        txDrawText     (20, 400 - t*2, 1210, 585 - t*2, "Мультфильм");
+
+        txSetColor     (RGB (206, 0, 103), 5);
+        txSelectFont   ("Gabriola", 200);
+        txDrawText     (15, 405 - t*2, 1205, 590 - t*2, "Мультфильм");
+
+        txSetColor     (RGB (0, 115, 230), 5);
+        txSelectFont   ("Asessor", 280);
+        txDrawText     (20, 180 + t*1, 1210, 385 + t*1, "Salvation");
+
+        txSetColor     (RGB (0, 77, 153), 5);
+        txSelectFont   ("Asessor", 280);
+        txDrawText     (15, 185 + t*1, 1205, 390 + t*1, "Salvation");
+
+        txSetColor     (RGB (0, 64, 128), 5);
+        txSelectFont   ("DS Arabic", 50);
+        txDrawText     (400, 700, 800, 750, "2021 год");
 
         txSleep (SleepTime);
         t ++ ;
