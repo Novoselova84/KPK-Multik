@@ -83,7 +83,7 @@ void Hello ()
     txBegin ();
 
     int t = 0;
-    while (t <= 120)
+    while (t <= 100)
         {
         DrawBascground ();
 
@@ -111,23 +111,19 @@ void TitleMultika ()
         DrawBascground ();
 
         txSetColor     (RGB (255, 0, 128), 5);
-        txSelectFont   ("Gabriola", 200);
+        txSelectFont   ("Constantia", 200);
         txDrawText     (20, 400 - t*2, 1210, 585 - t*2, "Мультфильм");
-
         txSetColor     (RGB (206, 0, 103), 5);
-        txSelectFont   ("Gabriola", 200);
         txDrawText     (15, 405 - t*2, 1205, 590 - t*2, "Мультфильм");
 
         txSetColor     (RGB (0, 115, 230), 5);
-        txSelectFont   ("Asessor", 280);
+        txSelectFont   ("Arial Black", 280);
         txDrawText     (20, 180 + t*1, 1210, 385 + t*1, "Salvation");
-
         txSetColor     (RGB (0, 77, 153), 5);
-        txSelectFont   ("Asessor", 280);
         txDrawText     (15, 185 + t*1, 1205, 390 + t*1, "Salvation");
 
-        txSetColor     (RGB (0, 64, 128), 5);
-        txSelectFont   ("DS Arabic", 50);
+        txSetColor     (TX_LIGHTBLUE, 50);
+        txSelectFont   ("Gabriola", 100);
         txDrawText     (400, 700, 800, 750, "2021 год");
 
         txSleep (SleepTime);
@@ -142,7 +138,7 @@ void Loneliness ()
     txBegin ();
 
     int t = 0;
-    while (t <= 300)
+    while (t <= 250)
         {
         DrawBascground ();
         DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225));
@@ -560,7 +556,7 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     txSetFillColor (flagColor);
     txRectangle    (x + 35*sizeX, y - 250*sizeY, x + (130 + deception*40)*sizeX, y - 180*sizeY);
 
-    txSelectFont   ("Arial", 40*sizeX, 0, FW_BOLD);
+    txSelectFont   ("Constantia", 40*sizeX, 0, FW_BOLD);
 
     int x2 = MIN (ROUND (x +  45*sizeX), ROUND (x + 120*sizeX));
     int x3 = MAX (ROUND (x +  45*sizeX), ROUND (x + 120*sizeX));
@@ -580,7 +576,7 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
                       {ROUND (x + 180*sizeX), ROUND (y + 150*sizeY)}};
     txPolygon (ship, 4);
 
-    txSelectFont ("Arial", 40*sizeX, 0, FW_BOLD);
+    txSelectFont ("Gabriola", 100*sizeX, 0, FW_BOLD);
 
     int x0 = MIN (ROUND (x - 110*sizeX), ROUND (x +  80*sizeX));
     int x1 = MAX (ROUND (x - 110*sizeX), ROUND (x +  80*sizeX));
@@ -590,7 +586,7 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     if (deception > 0)
         txDrawText (x0, y0, x1, y1, "Cerberus");
     else
-        txDrawText (x0, y0, x1, y1, "SALVATION");
+        txDrawText (x0, y0, x1, y1, "Salvation");
 
     txSetFillColor (starboardSailColor);
     POINT starboardSail [3] = {{ROUND (x +   35               *sizeX), ROUND (y)},
