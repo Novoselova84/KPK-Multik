@@ -311,7 +311,7 @@ void TobeContinued ()
     txBegin ();
 
     int t = 0;
-    while (t <= 100)
+    while (t <= 70)
         {
         DrawBascground ();
 
@@ -331,7 +331,7 @@ void Author ()
     txBegin ();
 
     int t = 0;
-    while (t <= 90)
+    while (t <= 70)
         {
         DrawBascground ();
 
