@@ -36,7 +36,7 @@ void DrawWhale      (int x, int y, double sizeX, double sizeY, COLORREF whaleCol
 void DrawIsland     (int x, int y, double sizeX, double sizeY, COLORREF islandColor, COLORREF sosColor, int Clear);
 
 void DrawPalma      (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, COLORREF leavesColor,
-                     COLORREF coconutsColor, double magnificationCoconutsCoconuts, double fallingCoconut);
+                     COLORREF coconutsColor, double magnificationCoconuts, double fallingCoconut);
 
 void DrawTreasures  (int x, int y, double sizeX, double sizeY, COLORREF chestBoxColor, COLORREF chestLidColor,
                      COLORREF $Color, double pirates, double chestLidUp);
