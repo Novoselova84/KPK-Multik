@@ -26,14 +26,14 @@ void DrawBigCloud   (int x, int y, double sizeX, double sizeY, COLORREF bigCloud
 
 void DrawSmallCloud (int x, int y, double sizeX, double sizeY, COLORREF smallCloud, double darkSmallCloud);
 
-void DrawShip       (int x, double y, double sizeX, double sizeY, COLORREF mastColor,COLORREF flagColor,COLORREF shipColor,
+void DrawShip       (int x, double y, double sizeX, double sizeY, COLORREF mastColor, COLORREF flagColor, COLORREF shipColor,
                      COLORREF starboardSailColor, COLORREF portSailColor, COLORREF anchorColor, double SetSail,
                      double dropAnchor, double deception);
 
 void DrawWhale      (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, COLORREF eyeColor, COLORREF fountainColor,
                      double founUp, int finMovement, int turbo);
 
-void DrawIsland     (int x, int y, double sizeX, double sizeY, COLORREF islandColor, COLORREF sosColor, int Clear);
+void DrawIsland     (int x, int y, double sizeX, double sizeY, COLORREF islandColor, COLORREF sosColor, int invisible);
 
 void DrawPalma      (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, COLORREF leavesColor,
                      COLORREF coconutsColor, double magnificationCoconuts, double fallingCoconut);
@@ -44,7 +44,7 @@ void DrawTreasures  (int x, int y, double sizeX, double sizeY, COLORREF chestBox
 void DrawTorch      (int x, int y, double sizeX, double sizeY, COLORREF stickColor, COLORREF fireColor, double signal);
 
 void DrawMan        (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLORREF eyesColor, COLORREF mouthColor,
-                     COLORREF legsColor, int legsStep, int rightHandDn,int leftHandDn, double Mad);
+                     COLORREF legsColor, int legsStep, int rightHandDn, int leftHandDn, double Mad);
 
 void DrawBascground ();
 
@@ -72,7 +72,7 @@ void Author         ();
 
 int main            ()
     {
-    txBegin();
+    txBegin ();
     txCreateWindow (1400, 800);
 
     Hello           ();
@@ -89,7 +89,7 @@ int main            ()
     DrawBascground  ();
     DrawTV          ();
 
-    txEnd();
+    txEnd ();
     return 0;
     }
 
@@ -104,7 +104,7 @@ void Hello ()
 
         txSetColor     (RGB (128, 0, 0), 5);
         txSelectFont   ("Gabriola", 300);
-        txDrawText     (20 , 300 - t*1, 1210, 785 - t*1, "Привет, друзья!");
+        txDrawText     (20, 300 - t*1, 1210, 785 - t*1, "Привет, друзья!");
 
         DrawSun        (600, 340, 1.5, 1.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/40)%2 * 1, 0, (t/30)%2 * 1);
@@ -132,7 +132,7 @@ void TitleMultika ()
         txDrawText     (15, 405 - t*2, 1205, 590 - t*2, "Мультфильм");
 
         txSetColor     (RGB (0, 115, 230), 5);
-        txSelectFont   ("Arial Black", 280);
+        txSelectFont   ("Arial", 280);
         txDrawText     (20, 180 + t*1, 1210, 385 + t*1, "Salvation");
         txSetColor     (RGB (0, 77, 153), 5);
         txDrawText     (15, 185 + t*1, 1205, 390 + t*1, "Salvation");
@@ -164,7 +164,7 @@ void Loneliness ()
         DrawWhale      (800 - t/2, 400, 0.7, 0.7, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/40)%2 * 1);
         DrawWhale      (600 - t/2, 500, 0.8, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/40)%2 * 1, (t/40)%2 * 1, (t/40)%2 * 1);
         DrawWhale      (800 - t/2, 600, 1  , 1  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/40)%2 * 1);
-        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2*1);
+        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
         DrawMan        (350 + t/2, 550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE,
                         RGB (0, 128, 128), (t/20)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1, 0);
         DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/30)%2 * 1, 0);
@@ -184,7 +184,7 @@ void Hope ()
     while (t <= 300)
         {
         DrawBascground ();
-        DrawOcean      (  15,       320, 1,   1  , RGB ( 77, 84, 225));
+        DrawOcean      (  15,       320, 1,   1  , RGB (77, 84, 225));
         DrawSmallCloud ( 500 + t/2, 100, 1,   1  , TX_WHITE, 0);
         DrawBigCloud   ( 100 + t/2,  50, 1,   1  , TX_WHITE, 0, 0);
         DrawSun        (1100,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
@@ -217,11 +217,11 @@ void Fear ()
         DrawSmallCloud ( 500 + t/2, 100, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1);
         DrawBigCloud   ( 100 + t/2,  50, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawSun        (1100,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
-                        RGB (66, 132, 0),TX_WHITE, RGB (128, 0, 255), 0, (t/30)%2 * 1, (t/30)%2 * 1, 0);
+                        RGB (66, 132, 0), TX_WHITE, RGB (128, 0, 255), 0, (t/30)%2 * 1, (t/30)%2 * 1, 0);
         DrawShip       ( 400 + t/2, 300, 0.7, 0.6, TX_GREY, RGB (255, 236, 236), RGB (164, 82, 0),
                         RGB (63, 63, 63), RGB (63, 63, 63), TX_GREY, 0, 0, 1);
         DrawIsland     ( 150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawMan        ( 600,       550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE,RGB (0, 128, 128),1, 0, 0, (t/40)%2 * 1);
+        DrawMan        ( 600,       550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 1, 0, 0, (t/40)%2 * 1);
         DrawTreasures  ( 900,       650, 1  , 1  , RGB (128, 128,   0), TX_YELLOW, TX_RED, 1, (t/50)%2 * 1);
         DrawPalma      ( 200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/40)%2 * 1, 0);
 
@@ -276,7 +276,7 @@ void Happiness ()
         DrawWhale      (500 - t/2, 360, 0.5, 0.6, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW , RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 1, 0);
         DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawMan        (620,       310, 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE,RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
+        DrawMan        (620,       310, 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
         DrawTreasures  (750,       385, 0.8, 0.8, RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
         DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
         DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
@@ -328,7 +328,7 @@ void TobeContinued ()
 
         txSetColor     (RGB (255, 0, 128), 5);
         txSelectFont   ("Gabriola", 220);
-        txDrawText     (20 , 200 - t*2, 1210, 585 - t*2, "Продолжение следует..");
+        txDrawText     (20, 200 - t*2, 1210, 585 - t*2, "Продолжение следует..");
 
         txSleep (SleepTime);
         t ++ ;
@@ -425,7 +425,7 @@ void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor)
     txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
     }
 
-void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor,COLORREF glassesColor, COLORREF eyesColor,
+void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLORREF glassesColor, COLORREF eyesColor,
               COLORREF mouthColor, COLORREF hatColor, double hello, double surprise, double anger, double newHat)
     {
     txSetColor (sunColor, 2);
@@ -642,7 +642,7 @@ void DrawWhale (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, C
 
     POINT caudalFin [4] = {{ROUND (x +  280            *sizeX), ROUND (y -  35            *sizeY)},
                            {ROUND (x + (330 + turbo*20)*sizeX), ROUND (y - (50 + turbo*20)*sizeY)},
-                           {ROUND (x + (325 + turbo*15)*sizeX), ROUND (y - (30           )*sizeY)},
+                           {ROUND (x + (325 + turbo*15)*sizeX), ROUND (y -  30            *sizeY)},
                            {ROUND (x + (340 + turbo*20)*sizeX), ROUND (y +      (turbo*20)*sizeY)}};
     txPolygon (caudalFin, 4);
 
@@ -655,7 +655,7 @@ void DrawWhale (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, C
     txLine (x + 50*sizeX, y - 50*sizeY, x + 60*sizeX, y - (80 + founUp*50)*sizeY);
     }
 
-void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor, COLORREF sosColor, int Clear)
+void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor, COLORREF sosColor, int invisible)
     {
     txSetColor     (TX_GREY, 3);
     txSetFillColor (islandColor);
@@ -668,7 +668,7 @@ void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor,
     int y0 = MIN (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
     int y1 = MAX (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
 
-    if (Clear > 0)
+    if (invisible > 0)
         txDrawText (x0, y0, x1, y1, " ");
     else
         txDrawText (x0, y0, x1, y1, "SOS!!!");
@@ -763,7 +763,7 @@ void DrawTorch (int x, int y, double sizeX, double sizeY, COLORREF stickColor, C
     }
 
 void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLORREF eyesColor, COLORREF mouthColor,
-              COLORREF legsColor, int legsStep, int rightHandDn,int leftHandDn, double Mad)
+              COLORREF legsColor, int legsStep, int rightHandDn, int leftHandDn, double Mad)
     {
     txSetColor     (TX_DARKGRAY, 2);
     txSetFillColor (headColor);
@@ -775,8 +775,8 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
 
     txSetColor     (RGB (128, 128, 92), 2);
     txSetFillColor (mouthColor);
-    txChord        (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY , x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
-    txArc          (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY , x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+    txChord        (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY, x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+    txArc          (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY, x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
 
     txSetColor (RGB (128, 128, 128), 5);
     txLine     (x, y - (4 + Mad*5)*sizeY, x, y + (4 - Mad*5)*sizeY);
