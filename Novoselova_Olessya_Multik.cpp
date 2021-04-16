@@ -9,7 +9,7 @@
 //+  $date   2021 год.
 //
 //+  $author Новоселова Олеся Анатольевна
-//+          учитель информатики МАОУ «МЛ № 1»
+//+          учитель информатики МАОУ «МЛ №1»
 //+          г. Магнитогорска
 //==================================================
 
@@ -251,7 +251,7 @@ void Salvation ()
         DrawMan        (600,       550 - (t/10)%2 * 10, 1, 1, RGB (192, 192, 192), TX_RED,
                         TX_WHITE, RGB (0, 128, 128), (t/40)%2 * 1, (t/40)%2 * 1, (t/40)%2 * 1, 0);
         DrawTreasures  (900,       650, 1  , 1  , RGB (128, 128, 0), TX_YELLOW, TX_RED, 0, 0);
-        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54, 0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1 );
+        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54, 0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
 
         txSleep (SleepTime);
         t ++ ;
@@ -274,7 +274,7 @@ void Happiness ()
         DrawSun        (600,       130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0);
         DrawWhale      (500 - t/2, 360, 0.5, 0.6, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW , RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 1, 0);
+        DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 1, 0);
         DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
         DrawMan        (620,       310, 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
         DrawTreasures  (750,       385, 0.8, 0.8, RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
@@ -470,8 +470,8 @@ void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLOR
 
     if (newHat > 0)
         {
-        txSetColor     (RGB (54,237,50), 3);
-        txSetFillColor (RGB (54,237,50));
+        txSetColor     (RGB (54, 237, 50), 3);
+        txSetFillColor (RGB (54, 237, 50));
         txEllipse   (x - 100*sizeX, y - (100 + hello*60)*sizeY, x + 100*sizeX, y - (50 + hello*60)*sizeY);
         txArc       (x -  60*sizeX, y - (140 + hello*60)*sizeY, x +  60*sizeX, y - (50 + hello*60)*sizeY, 0, 180);
         txRectangle (x -  60*sizeX, y - (140 + hello*60)*sizeY, x +  60*sizeX, y - (80 + hello*60)*sizeY);
@@ -663,6 +663,7 @@ void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor,
 
     txSetColor   (sosColor, 5);
     txSelectFont ("Arial", 100*sizeX, 0, FW_BOLD);
+
     int x0 = MIN (ROUND (x + 300*sizeX), ROUND (x + 800*sizeX));
     int x1 = MAX (ROUND (x + 300*sizeX), ROUND (x + 800*sizeX));
     int y0 = MIN (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
@@ -767,7 +768,7 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
     {
     txSetColor     (TX_DARKGRAY, 2);
     txSetFillColor (headColor);
-    txCircle       (x , y - Mad*5, 20*sizeX);
+    txCircle       (x, y - Mad*5, 20*sizeX);
 
     txSetFillColor (eyesColor);
     txCircle       (x - 10*sizeX, y - (5 + Mad*5)*sizeY, (4 + Mad*3)*sizeX);
