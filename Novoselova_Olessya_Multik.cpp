@@ -216,7 +216,7 @@ void Fear ()
         DrawOcean      (  15,       320, 1  , 1  , RGB (77, 84, 225));
         DrawSmallCloud ( 500 + t/2, 100, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1);
         DrawBigCloud   ( 100 + t/2,  50, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawSun        (1100 - t/6, 130 - (t/20)%2 * 10, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
+        DrawSun        (1100 - t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
                         RGB (66, 132, 0), TX_WHITE, RGB (128, 0, 255), 0, (t/30)%2 * 1, (t/30)%2 * 1, 0, 0);
         DrawShip       ( 400 + t/2, 300, 0.7, 0.6, TX_GREY, RGB (255, 236, 236), RGB (164, 82, 0),
                         RGB (63, 63, 63), RGB (63, 63, 63), TX_GREY, 0, 0, 1);
@@ -463,10 +463,19 @@ void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLOR
     txCircle (x - 30*sizeX, y -  10*sizeY, (10 + surprise*5)*sizeX);
     txCircle (x + 30*sizeX, y -  10*sizeY, (10 + surprise*5)*sizeX);
 
-    txSetColor     (TX_LIGHTGRAY, 3);
-    txSetFillColor (mouthColor);
-    txArc   (x - (35 + surprise*10)*sizeX, y + 20*sizeY, x + (35 + surprise*10)*sizeX, y + (55 + surprise*10)*sizeY, (sizeY >= 0)? 180:0, 180);
-    txChord (x - (35 + surprise*10)*sizeX, y + 20*sizeY, x + (35 + surprise*10)*sizeX, y + (55 + surprise*10)*sizeY, (sizeY >= 0)? 180:0, 180);
+    if (anger >= 1)
+        {
+        txSetColor   (RGB (54, 237, 50), 3);
+        txSelectFont ("Arial", 30);
+        txDrawText   (x - (35 + anger*10)*sizeX, y + 30*sizeY, x + (35 + anger*10)*sizeX, y + 70*sizeY, "NO");
+        }
+    else
+        {
+        txSetColor     (TX_LIGHTGRAY, 3);
+        txSetFillColor (mouthColor);
+        txArc   (x - (35 + surprise*10)*sizeX, y + 20*sizeY, x + (35 + surprise*10)*sizeX, y + (55 + surprise*10)*sizeY, (sizeY >= 0)? 180:0, 180);
+        txChord (x - (35 + surprise*10)*sizeX, y + 20*sizeY, x + (35 + surprise*10)*sizeX, y + (55 + surprise*10)*sizeY, (sizeY >= 0)? 180:0, 180);
+        }
 
     if (newHat > 0)
         {
