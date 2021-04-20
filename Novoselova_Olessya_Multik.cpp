@@ -774,10 +774,17 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
     txCircle       (x - 10*sizeX, y - (5 + Mad*5)*sizeY, (4 + Mad*3)*sizeX);
     txCircle       (x + 10*sizeX, y - (5 + Mad*5)*sizeY, (4 + Mad*3)*sizeX);
 
-    txSetColor     (RGB (128, 128, 92), 2);
-    txSetFillColor (mouthColor);
-    txChord        (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY, x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
-    txArc          (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY, x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+    if (Mad > 0)
+        {
+        txSetColor     (RGB (128, 128, 92), 2);
+        txSetFillColor (mouthColor);
+        txChord (x - 10*sizeX, y + (5 - Mad*5)*sizeY, x + 10*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+        }
+    else
+        {
+        txChord (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY, x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+        txArc   (x - (10 + Mad*5)*sizeX, y + (5 - Mad*5)*sizeY, x + (10 + Mad*5)*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+        }
 
     txSetColor (RGB (128, 128, 128), 5);
     txLine     (x, y - (4 + Mad*5)*sizeY, x, y + (4 - Mad*5)*sizeY);
