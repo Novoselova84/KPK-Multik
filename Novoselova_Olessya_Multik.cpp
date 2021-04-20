@@ -463,8 +463,8 @@ void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, d
     {
     if (wave >= 1)
         {
-        txSetColor     (RGB (80, 55, 219));
-        txSetFillColor (RGB (80, 55, 219));
+        txSetColor     (RGB (60, 35, 197));
+        txSetFillColor (RGB (60, 35, 197));
         txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
         }
     else
