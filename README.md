@@ -1,16 +1,16 @@
-# KPK-Multik  
+# Multik-*SALVATION*  
 ## Мультфильм создан с использованием Библиотеки Тупого Художника (TXlib.h)
 ### Сцены:
- 1. **HELLO**         (Здравствуйте, друзья). 
- 2. **TitleMultika**  (Название мультфильма).  
- 3. **Loneliness**    (Одиночество). 
- 4. **Hope**          (Надежда).
- 5. **Fear**          (Страх).
- 6. **Salvation**     (Спасение).
- 7. **Happiness**     (Счастье).                  
- 8. **Enjoyment**     (Наслаждение). 
- 9. **TobeContinued** (Продолжение следует).
-10. **Author**        (Автор).
+ 1. **HELLO**        
+ 2. **TitleMultika**   
+ 3. **Loneliness**     
+ 4. **Hope**          
+ 5. **Fear**         
+ 6. **Salvation**     
+ 7. **Happiness**                       
+ 8. **Enjoyment**    
+ 9. **TobeContinued** 
+10. **Author**        
 **********************
 ### Участники сцен:
  1. **TV**         (телевизор).
