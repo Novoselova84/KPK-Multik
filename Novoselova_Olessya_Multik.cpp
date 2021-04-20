@@ -104,7 +104,7 @@ void Hello ()
 
         txSetColor     (RGB (128, 0, 0), 5);
         txSelectFont   ("Gabriola", 300);
-        txDrawText     (20, 300 - t*1, 1210, 785 - t*1, "Привет, друзья!");
+        txDrawText     (20, 300 - t*2, 1210, 785 - t*2, "Привет, друзья!");
 
         DrawSun        (600, 340, 1.5, 1.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/40)%2 * 1, 0, (t/30)%2 * 1);
@@ -121,7 +121,7 @@ void TitleMultika ()
     txBegin ();
 
     int t = 0;
-    while (t <= 80)
+    while (t <= 60)
         {
         DrawBascground ();
 
@@ -133,9 +133,9 @@ void TitleMultika ()
 
         txSetColor     (RGB (0, 115, 230), 5);
         txSelectFont   ("Arial", 280);
-        txDrawText     (20, 180 + t*1, 1210, 385 + t*1, "Salvation");
+        txDrawText     (20, 180 + t*2, 1210, 385 + t*2, "Salvation");
         txSetColor     (RGB (0, 77, 153), 5);
-        txDrawText     (15, 185 + t*1, 1205, 390 + t*1, "Salvation");
+        txDrawText     (15, 185 + t*2, 1205, 390 + t*2, "Salvation");
 
         txSetColor     (TX_LIGHTBLUE, 50);
         txSelectFont   ("Gabriola", 100);
@@ -216,14 +216,14 @@ void Fear ()
         DrawOcean      (  15,       320, 1  , 1  , RGB (77, 84, 225));
         DrawSmallCloud ( 500 + t/2, 100, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1);
         DrawBigCloud   ( 100 + t/2,  50, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawSun        (1100 - t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
+        DrawSun        (1100 - t/6, 130 - (t/20)%2 * 10, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
                         RGB (66, 132, 0), TX_WHITE, RGB (128, 0, 255), 0, (t/30)%2 * 1, (t/30)%2 * 1, 0);
         DrawShip       ( 400 + t/2, 300, 0.7, 0.6, TX_GREY, RGB (255, 236, 236), RGB (164, 82, 0),
                         RGB (63, 63, 63), RGB (63, 63, 63), TX_GREY, 0, 0, 1);
-        DrawIsland     ( 150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawMan        ( 600,       550, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 1, 0, 0, (t/40)%2 * 1);
-        DrawTreasures  ( 900,       650, 1  , 1  , RGB (128, 128,   0), TX_YELLOW, TX_RED, 1, (t/50)%2 * 1);
-        DrawPalma      ( 200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/40)%2 * 1, 0);
+        DrawIsland     ( 150,       650,                 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
+        DrawMan        ( 400 + t/4, 550 - (t/10)%2 * 10, 1  , 1  , RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 1, 0, 0, (t/40)%2 * 1);
+        DrawTreasures  ( 900 - t/6, 650 - (t/20)%2 *  5, 1  , 1  , RGB (128, 128,   0), TX_YELLOW, TX_RED, 1, (t/50)%2 * 1);
+        DrawPalma      ( 200,       720,                 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, (t/40)%2 * 1, 0);
 
         txSleep (SleepTime);
         t ++ ;
@@ -274,12 +274,12 @@ void Happiness ()
         DrawSun        (600 + t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0);
         DrawWhale      (500 - t/2, 360, 0.5, 0.6, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
-        DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 1, 0);
+        DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 0, 0);
         DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawMan        (620,       310, 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
-        DrawTreasures  (750,       385, 0.8, 0.8, RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
-        DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
-        DrawPalma      (200,       720, 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
+        DrawMan        (620,       310,                 0.8, 0.8, RGB (192, 192, 192), TX_RED, TX_WHITE, RGB (0, 128, 128), 0, (t/30)%2 * 1, 1, 0);
+        DrawTreasures  (750,       385 - (t/10)%2 * 10, 0.8, 0.8, RGB (128, 128,   0), TX_YELLOW, TX_RED, 0, 0);
+        DrawIsland     (150,       650,                 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
+        DrawPalma      (200,       720,                 1.2, 1.2, RGB (108,  54,   0), RGB (0, 128, 0), TX_BROWN, 0, (t/40)%2 * 1);
 
         txSleep (SleepTime);
         t ++ ;
