@@ -17,7 +17,7 @@
 
 const int SleepTime = 10;
 
-void DrawOcean      (int x, int y, double sizeX, double sizeY, COLORREF oceanColor);
+void DrawOcean      (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave);
 
 void DrawSun        (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLORREF glassesColor, COLORREF eyesColor,
                      COLORREF mouthColor, COLORREF hatColor, double hello, double surprise, double anger, double newHat, double ray);
@@ -156,11 +156,11 @@ void Loneliness ()
     while (t <= 250)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225));
+        DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225), 0);
         DrawSmallCloud (500 + t/2, 100, 1  , 1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1  , 1  , TX_WHITE, 0, 0);
         DrawSun        (120 + t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0), TX_WHITE,
-                        RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 0, 0);
+                        RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 0, (t/40)%2 * 1);
         DrawWhale      (800 - t/2, 400, 0.7, 0.7, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/40)%2 * 1);
         DrawWhale      (600 - t/2, 500, 0.8, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/40)%2 * 1, (t/40)%2 * 1, (t/40)%2 * 1);
         DrawWhale      (800 - t/2, 600, 1  , 1  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/40)%2 * 1);
@@ -184,11 +184,11 @@ void Hope ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      (  15,       320, 1,   1  , RGB (77, 84, 225));
+        DrawOcean      (  15,       320, 1,   1  , RGB (77, 84, 225), 0);
         DrawSmallCloud ( 500 + t/2, 100, 1,   1  , TX_WHITE, 0);
         DrawBigCloud   ( 100 + t/2,  50, 1,   1  , TX_WHITE, 0, 0);
         DrawSun        (1100 - t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
-                        TX_WHITE, RGB (128, 0, 255), 0, (t/40)%2 * 1, 0, 0, 0);
+                        TX_WHITE, RGB (128, 0, 255), 0, (t/40)%2 * 1, 0, 0, (t/40)%2 * 1);
         DrawShip       ( 250 + t/2, 300, 0.3, 0.2, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 0, 0, 0);
         DrawWhale      ( 800 - t/2, 500, 0.9, 0.9, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawIsland     ( 150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
@@ -213,7 +213,7 @@ void Fear ()
     while (t <= 400)
         {
         DrawBascground ();
-        DrawOcean      (  15,       320, 1  , 1  , RGB (77, 84, 225));
+        DrawOcean      (  15,       320, 1  , 1  , RGB (77, 84, 225), 1);
         DrawSmallCloud ( 500 + t/2, 100, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1);
         DrawBigCloud   ( 100 + t/2,  50, 1  , 1  , TX_LIGHTGRAY, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawSun        (1100 - t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
@@ -240,11 +240,11 @@ void Salvation ()
     while (t <= 300)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225));
+        DrawOcean      ( 15,       320, 1  , 1  , RGB (77, 84, 225), 0);
         DrawSmallCloud (500 + t/2, 100, 1  , 1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1  , 1  , TX_WHITE, 0, 0);
         DrawSun        (120 + t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
-                        TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0, 0);
+                        TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0, (t/40)%2 * 1);
         DrawShip       (450 + t/2, 300 + t*0.2, 0.6, 0.6, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN,
                         TX_GREY, 0, (t/40)%2 * 1, 0);
         DrawIsland     (150,       650,                 1, 1, RGB (  0, 128,   0), TX_YELLOW, (t/30)%2 * 1);
@@ -268,11 +268,11 @@ void Happiness ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320, 1,   1  , RGB (77, 84, 225));
+        DrawOcean      ( 15,       320, 1,   1  , RGB (77, 84, 225), 0);
         DrawSmallCloud (500 + t/2, 100, 1,   1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1,   1  , TX_WHITE, 0, 0);
         DrawSun        (600 + t/6, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
-                        TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0, 0);
+                        TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, (t/30)%2 * 1, 0, 0, (t/40)%2 * 1);
         DrawWhale      (500 - t/2, 360, 0.5, 0.6, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawShip       (700,       450, 0.8, 0.8, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 0, 0);
         DrawIsland     (150,       650, 1  , 1  , RGB (  0, 128,   0), TX_YELLOW, 1);
@@ -296,13 +296,13 @@ void Enjoyment ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320,  1  ,   1  , RGB (77, 84, 225));
+        DrawOcean      ( 15,       320,  1  ,   1  , RGB (77, 84, 225), 0);
         DrawSmallCloud (500 + t/2, 100,  1  ,   1  , TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50,  1  ,   1  , TX_WHITE, 0, 0);
         DrawSmallCloud (700 + t/2,  50,  1  ,   1  , TX_WHITE, 0);
         DrawBigCloud   (300 + t/2, 100,  1  ,   1  , TX_WHITE, 0, 0);
         DrawSun        (600 + t/6, 130,  0.5,   0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
-                        TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 1, 0);
+                        TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 1, (t/40)%2 * 1);
         DrawWhale      (800 - t/2, 500, 0.7, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawWhale      (600 - t/2, 430, 0.6, 0.8, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
         DrawWhale      (700 - t/2, 600, 0.9, 1  , RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), (t/30)%2 * 1, (t/30)%2 * 1, (t/30)%2 * 1);
@@ -418,17 +418,26 @@ void DrawTV ()
     txRectangle    (20, 20, 1210, 785);
     }
 
-void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor)
+void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave)
     {
-    txSetColor     (oceanColor);
-    txSetFillColor (oceanColor);
-    txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
+    if (wave >=1)
+        {
+        txSetColor     (RGB (0, 0, 149));
+        txSetFillColor (RGB (0, 0, 149));
+        txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
+        }
+    else
+        {
+        txSetColor     (oceanColor);
+        txSetFillColor (oceanColor);
+        txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
+        }
     }
 
 void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLORREF glassesColor, COLORREF eyesColor,
               COLORREF mouthColor, COLORREF hatColor, double hello, double surprise, double anger, double newHat, double ray)
     {
-    txSetColor (sunColor, 3);
+    txSetColor (sunColor, 2);
 
     if (anger >= 1)
        txSetFillColor (TX_RED);
@@ -785,9 +794,9 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
 
     if (Mad > 0)
         {
-        txSetColor     (RGB (128, 128, 92), 2);
+        txSetColor     (RGB (128, 128, 92), 3);
         txSetFillColor (mouthColor);
-        txChord (x - 10*sizeX, y + (5 - Mad*5)*sizeY, x + 10*sizeX, y + (15 - Mad*5)*sizeY, (sizeY >= 0)? 180:0, 180);
+        txLine (x - 10*sizeX, y + 5*sizeY, x + 10*sizeX, y + 5*sizeY);
         }
     else
         {
