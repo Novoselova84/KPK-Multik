@@ -302,7 +302,7 @@ void Salvation ()
 
 void Happiness ()
     {
-    txBegin ();RGB (0, 77, 153)
+    txBegin ();
 
     txPlaySound ("Sounds/Happiness.wav");
 
