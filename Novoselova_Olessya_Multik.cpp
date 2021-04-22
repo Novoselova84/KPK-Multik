@@ -345,10 +345,9 @@ void Enjoyment ()
         {
         DrawBascground ();
         DrawOcean      ( 15,       320,  1,     1, RGB (77, 84, 225), 0);
-        DrawSmallCloud (500 + t/2, 100,  1,     1, TX_WHITE, 0);
-        DrawBigCloud   (100 + t/2,  50,  1,     1, TX_WHITE, 0, 0);
-        DrawSmallCloud (700 + t/2,  50,  1,     1, TX_WHITE, 0);
-        DrawBigCloud   (300 + t/2, 100,  1,     1, TX_WHITE, 0, 0);
+        DrawBigCloud   (100 + t/2,  70,  1,     1, TX_WHITE, 0, 0);
+        DrawSmallCloud (300 + t/2,  50,  1,     1, TX_WHITE, 0);
+        DrawBigCloud   (700 + t/2, 100,  1,     1, TX_WHITE, 0, 0);
 
         DrawSun        (600 + t/6, 130,  0.5,   0.5, RGB (255, 255, 0), RGB (0, 238, 238), RGB (66, 132, 0),
                         TX_WHITE, RGB (128, 0, 255), (t/30)%2 * 1, 0, 0, 1, (t/40)%2 * 1);
@@ -660,15 +659,10 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
 
     txSelectFont   ("Constantia", 40*sizeX, 0, FW_BOLD);
 
-    int x2 = MIN (ROUND (x +  45*sizeX), ROUND (x + 120*sizeX));
-    int x3 = MAX (ROUND (x +  45*sizeX), ROUND (x + 120*sizeX));
-    int y2 = MIN (ROUND (y - 240*sizeY), ROUND (y - 190*sizeY));
-    int y3 = MAX (ROUND (y - 240*sizeY), ROUND (y - 190*sizeY));
-
     if (deception > 0)
-        txDrawText (x2 - 20,  y2, x3 + deception*40, y3, "Pirates");
+        txTextOut (x +  45*sizeX, y - 240*sizeY, "Pirates");
     else
-        txDrawText (x2,       y2, x3,                y3, "C++");
+        txTextOut (x +  45*sizeX, y - 240*sizeY, "C++");
 
     txSetColor     (TX_GRAY, 3);
     txSetFillColor (shipColor);
@@ -680,15 +674,10 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
 
     txSelectFont ("Gabriola", 100*sizeX, 0, FW_BOLD);
 
-    int x0 = MIN (ROUND (x - 110*sizeX), ROUND (x +  80*sizeX));
-    int x1 = MAX (ROUND (x - 110*sizeX), ROUND (x +  80*sizeX));
-    int y0 = MIN (ROUND (y +  10*sizeY), ROUND (y + 140*sizeY));
-    int y1 = MAX (ROUND (y +  10*sizeY), ROUND (y + 140*sizeY));
-
     if (deception > 0)
-        txDrawText (x0, y0, x1, y1, "Cerberus");
+        txTextOut (x - 110*sizeX, y +  10*sizeY, "Cerberus");
     else
-        txDrawText (x0, y0, x1, y1, "Salvation");
+        txTextOut (x - 110*sizeX, y +  10*sizeY, "Salvation");
 
     txSetFillColor (starboardSailColor);
     POINT starboardSail [3] = {{ROUND (x +   35               *sizeX), ROUND (y)},
@@ -751,15 +740,10 @@ void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor,
     txSetColor   (sosColor, 5);
     txSelectFont ("Arial", 100*sizeX, 0, FW_BOLD);
 
-    int x0 = MIN (ROUND (x + 300*sizeX), ROUND (x + 800*sizeX));
-    int x1 = MAX (ROUND (x + 300*sizeX), ROUND (x + 800*sizeX));
-    int y0 = MIN (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
-    int y1 = MAX (ROUND (y +  20*sizeY), ROUND (y + 110*sizeY));
-
     if (invisible > 0)
-        txDrawText (x0, y0, x1, y1, " ");
+        txTextOut (x + 400*sizeX, y +  20*sizeY, " ");
     else
-        txDrawText (x0, y0, x1, y1, "SOS!!!");
+        txTextOut (x + 400*sizeX, y +  20*sizeY, "SOS!!!");
     }
 
 void DrawPalma (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, COLORREF leavesColor,
@@ -818,15 +802,10 @@ void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxC
     txSetColor   ($Color);
     txSelectFont ("Arial", 50*sizeX, 0, FW_BOLD);
 
-    int x0 = MIN(ROUND (x + 30*sizeX), ROUND (x + 90*sizeX));
-    int x1 = MAX(ROUND (x + 30*sizeX), ROUND (x + 90*sizeX));
-    int y0 = MIN(ROUND (y - 10*sizeY), ROUND (y + 80*sizeY));
-    int y1 = MAX(ROUND (y - 10*sizeY), ROUND (y + 80*sizeY));
-
     if (pirates > 0)
-        txDrawText (x0 - 25, y0, x1 + 25, y1, "junk");
+        txTextOut (x + 15*sizeX, y + 10*sizeY, "junk");
     else
-        txDrawText (x0,      y0, x1,      y1, "$");
+        txTextOut (x + 45*sizeX, y + 10*sizeY, "$");
     }
 
 void DrawTorch (int x, int y, double sizeX, double sizeY, COLORREF stickColor, COLORREF fireColor, double signal)
@@ -908,7 +887,7 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
     txSetColor   (TX_YELLOW, 5);
     txSelectFont ("Arial", 20, 0, FW_BOLD);
 
-    if (rightHandDn > 0 or leftHandDn > 0)
+    if (rightHandDn > 0 || leftHandDn > 0)
         txDrawText (x + 70, y - 150, x + 200, y + 50, "SOS!!!");
     else
         txDrawText (x - 70, y - 150, x + 130, y + 50, " ");
