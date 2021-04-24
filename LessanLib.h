@@ -22,7 +22,7 @@ void DrawPalma      (int x, int y, double sizeX, double sizeY, COLORREF trunkCol
                      COLORREF coconutsColor, double magnificationCoconuts, double fallingCoconut);
 
 void DrawTreasures  (int x, int y, double sizeX, double sizeY, COLORREF chestBoxColor, COLORREF chestLidColor,
-                    COLORREF $Color, double pirates, double chestLidUp);
+                    COLORREF dollarColor, double pirates, double chestLidUp);
 
 void DrawTorch      (int x, int y, double sizeX, double sizeY, COLORREF stickColor, COLORREF fireColor, double signal);
 
@@ -391,7 +391,7 @@ void DrawPalma (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, C
     }
 
 void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxColor, COLORREF chestLidColor,
-                    COLORREF $Color, double pirates, double chestLidUp)
+                    COLORREF dollarColor, double pirates, double chestLidUp)
     {
     txSetColor     (TX_GRAY, 3);
     txSetFillColor (chestBoxColor);
@@ -405,7 +405,7 @@ void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxC
                      {ROUND (x + 110*sizeX), ROUND (y -  (5 + chestLidUp*20)*sizeY)}};
     txPolygon (cap, 4);
 
-    txSetColor   ($Color);
+    txSetColor   (dollarColor);
     txSelectFont ("Arial", 50*sizeX, 0, FW_BOLD);
 
     if (pirates > 0)
