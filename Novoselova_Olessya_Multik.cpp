@@ -15,9 +15,9 @@
 
 # include "LessanLib.h"
 
-const int SleepTime = 10;
+using namespace Lessan;
 
-void DrawBascground ();
+const int SleepTime = 10;
 
 void Hello          ();
 
@@ -385,11 +385,4 @@ void Author ()
     txPlaySound (NULL);
 
     txEnd ();
-    }
-
-void DrawBascground ()
-    {
-    txClear ();
-
-    DrawTV ();
     }

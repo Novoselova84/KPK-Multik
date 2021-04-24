@@ -1,5 +1,8 @@
 # include "TXLib.h"
 
+namespace Lessan
+{
+
 void DrawOcean      (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave);
 
 void DrawSun        (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLORREF glassesColor, COLORREF eyesColor,
@@ -31,6 +34,8 @@ void DrawMan        (int x, int y, double sizeX, double sizeY, COLORREF headColo
 
 void DrawTextDraw   (int x, int y, int x0, int y0, const char text[], COLORREF textColor, COLORREF shadowColor);
 
+void DrawBascground ();
+
 void DrawTV         ();
 
 void DrawTextDraw   (int x, int y, int x0, int y0, const char text[], COLORREF textColor, COLORREF shadowColor)
@@ -40,6 +45,13 @@ void DrawTextDraw   (int x, int y, int x0, int y0, const char text[], COLORREF t
     txDrawText   (x, y, x0, y0, text);
     txSetColor   (shadowColor, 5);
     txDrawText   (x + 5, y + 5, x0 + 5, y0 + 5, text);
+    }
+
+void DrawBascground ()
+    {
+    txClear ();
+
+    DrawTV ();
     }
 
 void DrawTV ()
@@ -503,3 +515,5 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
     else
         txDrawText (x + 70, y - 150, x + 200, y + 50, " ");
     }
+
+}    //namespace Lessan
