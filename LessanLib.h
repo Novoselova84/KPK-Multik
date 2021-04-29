@@ -3,7 +3,7 @@
 namespace Lessan
 {
 
-void DrawOcean      (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave);
+void DrawOcean      (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave, double storm);
 
 void DrawSun        (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLORREF glassesColor, COLORREF eyesColor,
                      COLORREF mouthColor, COLORREF hatColor, double hello, double surprise, double anger, double newHat, double ray);
@@ -104,13 +104,13 @@ void DrawTV ()
     txRectangle    (20, 20, 1210, 785);
     }
 
-void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave)
+void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave, double storm)
     {
     if (wave >= 1)
         {
         txSetColor     (RGB (60, 35, 197));
         txSetFillColor (RGB (60, 35, 197));
-        txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
+        txRectangle    (x, y + (storm*20)*sizeY, x + 1200*sizeX, y + (470 + storm*20)*sizeY);
         }
     else
         {
@@ -505,7 +505,7 @@ void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLO
     txSetColor   (TX_YELLOW, 5);
     txSelectFont ("Arial", 20, 0, FW_BOLD);
 
-    if (rightHandDn > 0 || leftHandDn > 0)
+    if (leftHandDn > 0 || rightHandDn > 0)
         txDrawText (x + 70, y - 150, x + 200, y + 50, "SOS!!!");
     else
         txDrawText (x - 70, y - 150, x + 130, y + 50, " ");
