@@ -130,7 +130,7 @@ void Loneliness ()
     while (t <= 250)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320, 1,   1,   RGB (77, 84, 225), 0);
+        DrawOcean      ( 15,       320, 1,   1,   RGB (77, 84, 225), 0, 0);
         DrawSmallCloud (500 + t/2, 100, 1,   1,   TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1,   1,   TX_WHITE, 0, 0);
 
@@ -166,7 +166,7 @@ void Hope ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      (  15,       320, 1,   1,   RGB (77, 84, 225), 0);
+        DrawOcean      (  15,       320, 1,   1,   RGB (77, 84, 225), 0, 0);
         DrawSmallCloud ( 500 + t/2, 100, 1,   1,   TX_WHITE, 0);
         DrawBigCloud   ( 100 + t/2,  50, 1,   1,   TX_WHITE, 0, 0);
 
@@ -203,7 +203,7 @@ void Fear ()
     while (t <= 400)
         {
         DrawBascground ();
-        DrawOcean      (  15,       320, 1,   1, RGB (77, 84, 225), 1);
+        DrawOcean      (  15,       320, 1,   1, RGB (77, 84, 225), 1, (t/20)%2 * 1);
         DrawSmallCloud ( 500 + t/2, 100, 1,   1, TX_LIGHTGRAY, (t/30)%2 * 1);
         DrawBigCloud   ( 100 + t/2,  50, 1,   1, TX_LIGHTGRAY, (t/30)%2 * 1, (t/30)%2 * 1);
 
@@ -240,7 +240,7 @@ void Salvation ()
     while (t <= 300)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320, 1,   1,   RGB (77, 84, 225), 0);
+        DrawOcean      ( 15,       320, 1,   1,   RGB (77, 84, 225), 0, 0);
         DrawSmallCloud (500 + t/2, 100, 1,   1,   TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1,   1,   TX_WHITE, 0, 0);
 
@@ -277,7 +277,7 @@ void Happiness ()
     while (t <= 200)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320, 1,   1,   RGB (77, 84, 225), 0);
+        DrawOcean      ( 15,       320, 1,   1,   RGB (77, 84, 225), 0, 0);
         DrawSmallCloud (500 + t/2, 100, 1,   1,   TX_WHITE, 0);
         DrawBigCloud   (100 + t/2,  50, 1,   1,   TX_WHITE, 0, 0);
 
@@ -311,7 +311,7 @@ void Enjoyment ()
     while (t <= 180)
         {
         DrawBascground ();
-        DrawOcean      ( 15,       320,  1,     1, RGB (77, 84, 225), 0);
+        DrawOcean      ( 15,       320,  1,     1, RGB (77, 84, 225), 0, 0);
         DrawBigCloud   (100 + t/2,  70,  1,     1, TX_WHITE, 0, 0);
         DrawSmallCloud (300 + t/2,  50,  1,     1, TX_WHITE, 0);
         DrawBigCloud   (700 + t/2, 100,  1,     1, TX_WHITE, 0, 0);

@@ -13,7 +13,7 @@ void DrawBigCloud   (int x, int y, double sizeX, double sizeY, COLORREF bigCloud
 void DrawSmallCloud (int x, int y, double sizeX, double sizeY, COLORREF smallCloudColor, double darkSmallCloud);
 
 void DrawShip       (int x, double y, double sizeX, double sizeY, COLORREF mastColor, COLORREF flagColor, COLORREF shipColor,
-                     COLORREF starboardSailColor, COLORREF portSailColor, COLORREF anchorColor, double SetSail,
+                     COLORREF starboardSailColor, COLORREF portSailColor, COLORREF anchorColor, double setSail,
                      double dropAnchor, double deception);
 
 void DrawWhale      (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, COLORREF eyeColor, COLORREF fountainColor,
@@ -38,6 +38,24 @@ void DrawBascground ();
 
 void DrawTV         ();
 
+//{--------------------------------------------------------------------------------------------------------
+//! Рисует текст с тенью!
+//!
+//! @param x         x -координата верхнего левого угла области!
+//! @param y         y -координата верхнего левого угла области!
+//! @param x0        x0-координата нижнего правого угла области!
+//! @param y0        y0-координата нижнего правого угла области!
+//! @param text      Текстовая строка!
+//! @param COLORREF  Цвет текста и тени текста!
+//!
+//! @note            Функция сыровата, но ты мой друг можешь сорвать <i>Jackpot!</i>
+//!
+//! @par             Пример использования:
+//! @code
+//!                  DrawTextDraw (20, 400, 1210, 585, "Мультфильм", RGB (255, 0, 128), RGB (206, 0, 103));
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
+
 void DrawTextDraw   (int x, int y, int x0, int y0, const char text[], COLORREF textColor, COLORREF shadowColor)
     {
     txSelectFont ("Constantia", 200);
@@ -53,6 +71,17 @@ void DrawBascground ()
 
     DrawTV ();
     }
+
+//{--------------------------------------------------------------------------------------------------------
+//! Рисует старый телевизор!
+//!
+//! @note       Функция без параметров, но ты мой друг можешь сорвать <i>Jackpot!</i>, если захочешь!
+//!
+//! @par        Пример использования:
+//! @code
+//!             DrawTV ();
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
 
 void DrawTV ()
     {
@@ -104,6 +133,25 @@ void DrawTV ()
     txRectangle    (20, 20, 1210, 785);
     }
 
+//{--------------------------------------------------------------------------------------------------------
+//! Рисует океан!
+//!
+//! @param x         x-координата верхнего левого угла начала океана!
+//! @param y         y-координата верхнего левого угла начала океана!
+//! @param sizeX     Размер океана!
+//! @param sizeY     Размер океана!
+//! @param COLORREF  Цвет океана!
+//! @param wave      Меняет цвет при определенных условиях!
+//! @param storm     Делает движение океана!
+//!
+//! @note            Функция хороша, но ты мой друг можешь сорвать <i>Jackpot!<i>, если захочешь!
+//!
+//! @par             Пример использования:
+//! @code
+//!                  DrawOcean      ( 15, 320, 1, 1, RGB (77, 84, 225), 0, 0);
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
+
 void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave, double storm)
     {
     if (wave >= 1)
@@ -119,6 +167,33 @@ void DrawOcean (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, d
         txRectangle    (x, y, x + 1200*sizeX, y + 470*sizeY);
         }
     }
+
+//{---------------------------------------------------------------------------------------------------------
+//! Рисует солнце!
+//!
+//! @param x                      x-координата центра солнца!
+//! @param y                      y-координата центра солнца!
+//! @param sizeX                  Размер солнца!
+//! @param sizeY                  Рзмер солнца!
+//! @param COLORREF sunColor      Устанавливает цвет солнца!
+//! @param COLORREF glassesColor  Устанавливает цвет очков солнца!
+//! @param COLORREF eyesColor     Устанавливает цвет глаз солнца!
+//! @param COLORREF mouthColor    Устанавливает цвет рта солнца!
+//! @param COLORREF hatColor      Устанавливает цвет шляпы солнца!
+//! @param hello                  Движение шляпой, приветствие!
+//! @param surprise               Удивление глазами!
+//! @param anger                  Злое солнце!
+//! @param newHat                 Обновляет шляпу у солнца!
+//! @param ray                    Движение лучами солнца!
+//!
+//! @note                         Функция прекрасна, но есть над чем подумать мой друг!
+//!
+//! @par                          Пример использования:
+//! @code
+//!                               DrawSun (150, 130, 0.5, 0.5, RGB (255, 255, 0), RGB (0, 238, 238),
+//!                                        RGB (66, 132, 0), TX_WHITE, RGB (128, 0, 255), 0, 0, 0, 0, 1);
+//! @endcode
+//}----------------------------------------------------------------------------------------------------------
 
 void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLORREF glassesColor, COLORREF eyesColor,
               COLORREF mouthColor, COLORREF hatColor, double hello, double surprise, double anger, double newHat, double ray)
@@ -190,6 +265,27 @@ void DrawSun (int x, int y, double sizeX, double sizeY, COLORREF sunColor, COLOR
         }
     }
 
+//{--------------------------------------------------------------------------------------------------------
+//! Рисует большое облако!
+//!
+//! @param x                       x-координата левого края облака!
+//! @param y                       y-координата левого края облака!
+//! @param sizeX                   Размер облака!
+//! @param sizeY                   Размер облака!
+//! @param COLORREF bigCloudColor  Цвет облака!
+//! @param darkBigCloud            Делает тучу из облака!
+//! @param hit                     Рисует молнии!
+//!
+//! @note                          Функция классная, но ты можешь улучшить ее!
+//!
+//! @see                           DrawSmallCloud ()
+//!
+//! @par                           Пример использования:
+//! @code
+//!                                DrawBigCloud  (100, 50, 1, 1, TX_WHITE, 0, 0);
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
+
 void DrawBigCloud (int x, int y, double sizeX, double sizeY, COLORREF bigCloudColor, double darkBigCloud, double hit)
     {
     if (darkBigCloud < 1)
@@ -232,6 +328,26 @@ void DrawBigCloud (int x, int y, double sizeX, double sizeY, COLORREF bigCloudCo
         }
     }
 
+//{--------------------------------------------------------------------------------------------------------
+//! Рисует маленькое облако!
+//!
+//! @param x                         x-координата левого края облака!
+//! @param y                         y-координата левого края облака!
+//! @param sizeX                     Размер облака!
+//! @param sizeY                     Размер облака!
+//! @param COLORREF smallCloudColor  Цвет облака!
+//! @param darkSmallCloud            Делает тучку из облака!
+//!
+//! @note                            Функция как функция, все в твоих руках!
+//!
+//! @see                             DrawBigCloud ()
+//!
+//! @par                             Пример использования:
+//! @code
+//!                                  DrawBigCloud  (100, 50, 1, 1, TX_WHITE, 0, 0);
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
+
 void DrawSmallCloud (int x, int y, double sizeX, double sizeY, COLORREF smallCloudColor, double darkSmallCloud)
     {
     if (darkSmallCloud < 1)
@@ -263,8 +379,33 @@ void DrawSmallCloud (int x, int y, double sizeX, double sizeY, COLORREF smallClo
         }
     }
 
+//{----------------------------------------------------------------------------------------------------------------------
+//! Рисует корабль!
+//!
+//! @param x                            x-координата верхнего левого края мачты!
+//! @param y                            y-координата верхнего левого края мачты!
+//! @param sizeX                        Размер корабля!
+//! @param sizeY                        Размер корабля!
+//! @param COLORREF mastColor           Цвет мачты!
+//! @param COLORREF flagColor           Цвет флага!
+//! @param COLORREF shipColor           Цвет корабля!
+//! @param COLORREF starboardSailColor  Цвет правого паруса!
+//! @param COLORREF portSailColor       Цвет левого паруса!
+//! @param COLORREF anchorColor         Цвет якоря!
+//! @param setSail                      Сворачивает паруса!
+//! @param dropAnchor                   Спускает якорь!
+//! @param deception                    Меняет корабль <i>Salvation<i> на <i>Cerberus!</i>
+//!
+//! @note            Попутного ветра вам сударь и новых параметров в функцию!
+//!
+//! @par             Пример использования:
+//! @code
+//!                  DrawShip ( 250, 300, 1, 1, TX_GREY, TX_YELLOW, RGB (164, 82, 0), TX_PINK, TX_CYAN, TX_GREY, 1, 0, 1);
+//! @endcode
+//}-----------------------------------------------------------------------------------------------------------------------
+
 void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, COLORREF flagColor, COLORREF shipColor,
-               COLORREF starboardSailColor, COLORREF portSailColor, COLORREF anchorColor, double SetSail,
+               COLORREF starboardSailColor, COLORREF portSailColor, COLORREF anchorColor, double setSail,
                double dropAnchor, double deception)
     {
     txSetColor     (TX_GRAY, 3);
@@ -300,12 +441,12 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     txSetFillColor (starboardSailColor);
     POINT starboardSail [3] = {{ROUND (x +   35               *sizeX), ROUND (y)},
                                {ROUND (x +   35               *sizeX), ROUND (y - 180*sizeY)},
-                               {ROUND (x + (230 - SetSail*200)*sizeX), ROUND (y -  10*sizeY)}};
+                               {ROUND (x + (230 - setSail*200)*sizeX), ROUND (y -  10*sizeY)}};
     txPolygon (starboardSail, 3);
 
     txSetFillColor (portSailColor);
     POINT portSail [3] = {{ROUND (x -    5               *sizeX), ROUND (y)},
-                          {ROUND (x - (200 - SetSail*200)*sizeX), ROUND (y -  10*sizeY)},
+                          {ROUND (x - (200 - setSail*200)*sizeX), ROUND (y -  10*sizeY)},
                           {ROUND (x -    5               *sizeX), ROUND (y - 250*sizeY)}};
     txPolygon (portSail, 3);
 
@@ -316,6 +457,28 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     txArc  (x + 105*sizeX, y + (100 + dropAnchor*100)*sizeY, x + 155*sizeX, y + (125 + dropAnchor*100)*sizeY, 180, 180);
     txArc  (x + 105*sizeX, y + (100 + dropAnchor*100)*sizeY, x + 155*sizeX, y + (120 + dropAnchor*100)*sizeY, 180, 180);
     }
+
+//{------------------------------------------------------------------------------------------------------------------------------
+//! Рисует кита!
+//!
+//! @param x                       x-координата верхнего левого угла прямоугольника, описанного вокруг эллипса, содержащего дугу!
+//! @param y                       y-координата верхнего левого угла прямоугольника, описанного вокруг эллипса, содержащего дугу!
+//! @param sizeX                   Размер кита!
+//! @param sizeY                   Размер кита!
+//! @param COLORREF whaleColor     Цвет кита!
+//! @param COLORREF eyeColor       Цвет глаза кита!
+//! @param COLORREF fountainColor  Цвет фонтана, который выпускает кит!
+//! @param founUp                  Настраивает высоту выпускаемого фонтана китом!
+//! @param finMovement             Движения плавниками кита!
+//! @param turbo                   Движение хвостом кита!
+//!
+//! @note                          Кит в начальной разработке, желаю вам классной доработки!
+//!
+//! @par                           Пример использования:
+//! @code
+//!                                DrawWhale (800, 500, 0.9, 0.9, RGB (128, 128, 128), TX_BLUE, RGB (0, 128, 255), 1, 0, 0);
+//! @endcode
+//}------------------------------------------------------------------------------------------------------------------------------
 
 void DrawWhale (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, COLORREF eyeColor, COLORREF fountainColor,
                 double founUp, int finMovement, int turbo)
@@ -349,6 +512,25 @@ void DrawWhale (int x, int y, double sizeX, double sizeY, COLORREF whaleColor, C
     txLine (x + 50*sizeX, y - 50*sizeY, x + 60*sizeX, y - (80 + founUp*50)*sizeY);
     }
 
+//{--------------------------------------------------------------------------------------------------------
+//! Рисует остров!
+//!
+//! @param x                     x-координата верхнего левого угла прямоугольника, описанного вокруг эллипса!
+//! @param y                     y-координата верхнего левого угла прямоугольника, описанного вокруг эллипса!
+//! @param sizeX                 Размер острова!
+//! @param sizeY                 Размер острова!
+//! @param COLORREF islandColor  Цвет острова!
+//! @param COLORREF sosColor     Цвет текста SOS!!!, на острове!
+//! @param invisible             Цвет текста SOS!!!, становится невидимым!
+//!
+//! @note                        В функцию заложен фундамент, желаю успеха тебе!
+//!
+//! @par                         Пример использования:
+//! @code
+//!                              DrawIsland (150, 650, 1, 1, RGB (0, 128, 0), TX_YELLOW, 1);
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
+
 void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor, COLORREF sosColor, int invisible)
     {
     txSetColor     (TX_GREY, 3);
@@ -363,6 +545,27 @@ void DrawIsland (int x, int y, double sizeX, double sizeY, COLORREF islandColor,
     else
         txTextOut (x + 400*sizeX, y +  20*sizeY, "SOS!!!");
     }
+
+//{------------------------------------------------------------------------------------------------------------------
+//! Рисует пальму!
+//!
+//! @param x                       x-координата верхнего левого угла ствола пальмы!
+//! @param y                       y-координата верхнего левого угла ствола пальмы!
+//! @param sizeX                   Размер пальмы!
+//! @param sizeY                   Размер пальмы!
+//! @param COLORREF trunkColor     Цвет ствола пальмы!
+//! @param COLORREF leavesColor    Цвет листьев пальмы!
+//! @param COLORREF coconutsColor  Цвет кокосов!
+//! @param magnificationCoconuts   Увеличение кокосов!
+//! @param fallingCoconut          Падающие кокосы!
+//!
+//! @note                          Это только начало!
+//!
+//! @par                           Пример использования:
+//! @code
+//!                                DrawPalma (200, 720, 1.2, 1.2, RGB (108, 54, 0), RGB (0, 128, 0), TX_BROWN, 0, 1);
+//! @endcode
+//}------------------------------------------------------------------------------------------------------------------
 
 void DrawPalma (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, COLORREF leavesColor,
                 COLORREF coconutsColor, double magnificationCoconuts, double fallingCoconut)
@@ -402,6 +605,27 @@ void DrawPalma (int x, int y, double sizeX, double sizeY, COLORREF trunkColor, C
     txCircle (x +  10*sizeX, y - (205 - fallingCoconut*170)*sizeY, (15 + magnificationCoconuts*10)*sizeX);
     }
 
+//{------------------------------------------------------------------------------------------------------------
+//! Рисует сундук!
+//!
+//! @param x                       x-координата верхнего левого угла сундука!
+//! @param y                       y-координата верхнего левого угла сундука!
+//! @param sizeX                   Размер сундука!
+//! @param sizeY                   Размер сундука!
+//! @param COLORREF chestBoxColor  Цвет короба сундука!
+//! @param COLORREF chestLidColor  Цвет крышки сундука!
+//! @param COLORREF dollarColor    Цвет текстовой надписи!
+//! @param pirates                 Превращающий сундук c <i>$<i> в коробку с хламом!
+//! @param chestLidUp              Открывает крышку сундука!
+//!
+//! @note                          Вот оно, но может быть и лучше!
+//!
+//! @par                           Пример использования:
+//! @code
+//!                                DrawTreasures (900, 650, 1, 1, RGB (128, 128, 0), TX_YELLOW, TX_RED, 0, 0);
+//! @endcode
+//}------------------------------------------------------------------------------------------------------------
+
 void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxColor, COLORREF chestLidColor,
                     COLORREF dollarColor, double pirates, double chestLidUp)
     {
@@ -426,6 +650,25 @@ void DrawTreasures (int x, int y, double sizeX, double sizeY, COLORREF chestBoxC
         txTextOut (x + 45*sizeX, y + 10*sizeY, "$");
     }
 
+//{---------------------------------------------------------------------------------------------
+//! Рисует факел!
+//!
+//! @param x                   x-первая координата в массиве структур POINT <i>огня факела!</i>
+//! @param y                   y-первая координата в массиве структур POINT <i>огня факела!</i>
+//! @param sizeX               Размер факела!
+//! @param sizeY               Размер факела!
+//! @param COLORREF stickColor Цвет палки факела!
+//! @param COLORREF fireColor  Цвет шапки факела!
+//! @param signal              Увеличение шапки <i>огня<i> факела!
+//!
+//! @note                      Fire show!
+//!
+//! @par                       Пример использования:
+//! @code
+//!                            DrawTorch (500, 520, 1, 1, RGB (108, 54, 0), RGB (255, 0, 0), 1);
+//! @endcode
+//}----------------------------------------------------------------------------------------------
+
 void DrawTorch (int x, int y, double sizeX, double sizeY, COLORREF stickColor, COLORREF fireColor, double signal)
     {
     txSetColor     (TX_GREY, 2);
@@ -446,6 +689,31 @@ void DrawTorch (int x, int y, double sizeX, double sizeY, COLORREF stickColor, C
                       {ROUND (x),                          ROUND (y -  30             *sizeY)}};
     txPolygon (fire, 6);
     }
+
+//{---------------------------------------------------------------------------------------------
+//! Рисует человека!
+//!
+//! @param x                    x-координата центра головы человека!
+//! @param y                    y-координата центра головы человека!
+//! @param sizeX                Размер человека!
+//! @param sizeY                Размер человека!
+//! @param COLORREF headColor   Цвет головы!
+//! @param COLORREF eyesColor   Цвет глаз!
+//! @param COLORREF mouthColor  Цвет рта!
+//! @param COLORREF legsColor   Цвет штанов!
+//! @param legsStep             Шаг, движение ног!
+//! @param rightHandDn          Движение правой руки!
+//! @param leftHandDn           Движение левой руки!
+//! @param Mad                  Бешеный, увеличение глаз, изменение формы рта, отрыв головы!
+//!
+//! @note                       Лучше не придумаешь, дерзай!
+//!
+//! @par                        Пример использования:
+//! @code
+//!                             DrawMan (600, 550, 1, 1, RGB (192, 192, 192), TX_RED, TX_WHITE,
+//!                                      RGB (0, 128, 128), (t/20)%2 * 1, 0, (t/30)%2 * 1, 0);
+//! @endcode
+//}---------------------------------------------------------------------------------------------
 
 void DrawMan (int x, int y, double sizeX, double sizeY, COLORREF headColor, COLORREF eyesColor, COLORREF mouthColor,
               COLORREF legsColor, int legsStep, int rightHandDn, int leftHandDn, double Mad)
