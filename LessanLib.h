@@ -1,5 +1,7 @@
 # include "TXLib.h"
 
+# include "config.h"
+
 namespace Lessan
 {
 
