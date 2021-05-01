@@ -1,17 +1,19 @@
-//=================================================
+//=======================================================
 //+  $file   Novoselova_Olessya_Multik.cpp
 //
-//+  $title  Мультфильм "SALVATION" ---> Спасение.
+//+  $title  Cartoon "SALVATION".
 //
-//+          Мультик создан в рамках КПК
-//+          по информатике "Наука в регионы".
+//+          The cartoon was created within the framework
+//+              of the CCP on computer science
+//+                "Science in the regions".
+//+
 //
-//+  $date             2021 год.
+//+  $date             2021 year.
 //
-//+  $author Новоселова Олеся Анатольевна
-//+          учитель информатики МАОУ «МЛ №1»
-//+          г. Магнитогорска
-//==================================================
+//+  $author Novoselova Olesya Anatolyevna computer
+//+          science teacher of MAOU "ML No. 1" of
+//+                   Magnitogorsk
+//========================================================
 
 # include "LessanLib.h"
 
@@ -38,6 +40,8 @@ void Enjoyment      ();
 void TobeContinued  ();
 
 void Author         ();
+
+void DrawBascground ();
 
 int main            ()
     {
@@ -385,4 +389,11 @@ void Author ()
     txPlaySound (NULL);
 
     txEnd ();
+    }
+
+void DrawBascground ()
+    {
+    txClear ();
+
+    DrawTV ();
     }

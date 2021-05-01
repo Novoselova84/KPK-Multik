@@ -34,8 +34,6 @@ void DrawMan        (int x, int y, double sizeX, double sizeY, COLORREF headColo
 
 void DrawTextDraw   (int x, int y, int x0, int y0, const char text[], COLORREF textColor, COLORREF shadowColor);
 
-void DrawBascground ();
-
 void DrawTV         ();
 
 //{--------------------------------------------------------------------------------------------------------
@@ -63,13 +61,6 @@ void DrawTextDraw   (int x, int y, int x0, int y0, const char text[], COLORREF t
     txDrawText   (x, y, x0, y0, text);
     txSetColor   (shadowColor, 5);
     txDrawText   (x + 5, y + 5, x0 + 5, y0 + 5, text);
-    }
-
-void DrawBascground ()
-    {
-    txClear ();
-
-    DrawTV ();
     }
 
 //{--------------------------------------------------------------------------------------------------------
