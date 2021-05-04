@@ -1,16 +1,16 @@
 //{=======================================================
-//+  $file   Novoselova_Olessya_Multik.cpp
+//+ @file   Novoselova_Olessya_Multik.cpp
 //
-//+  $title  Cartoon "SALVATION".
+//+ @title  Cartoon "SALVATION".
 //
 //+          The cartoon was created within the framework
 //+          of the CCP on computer science
 //+          "Science in the regions".
 //+
 //
-//+  $date   2021 year.
+//+ @date   2021 year.
 //
-//+  $author Novoselova Olesya Anatolyevna computer
+//+ @author Novoselova Olesya Anatolyevna computer
 //+          science teacher of MAOU "ML No. 1" of
 //+          Magnitogorsk
 //}========================================================

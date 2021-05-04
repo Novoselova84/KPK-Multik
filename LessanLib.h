@@ -1,7 +1,28 @@
+//{===================================================
+//+ @brief   LessanLib.h cartoon tool library
+//+
+//+ @author  Novoselova Olesya Anatolyevna computer
+//+          science teacher of MAOU "ML No. 1" of
+//+          Magnitogorsk
+//+
+//+ @date         2021
+//}===================================================
+
 # include "TXLib.h"
 
 namespace Lessan
 {
+
+//{--------------------------------------------------------------------------------------------------------
+//! Константа задержка времени.
+//!
+//! @const intSleepTime
+//!
+//! @par             Пример использования:
+//! @code
+//!                  txSleep (SleepTime);
+//! @endcode
+//}--------------------------------------------------------------------------------------------------------
 
 const int SleepTime = 10;
 
