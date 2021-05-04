@@ -1,9 +1,9 @@
 # include "TXLib.h"
 
-# include "config.h"
-
 namespace Lessan
 {
+
+const int SleepTime = 10;
 
 void DrawOcean      (int x, int y, double sizeX, double sizeY, COLORREF oceanColor, double wave, double storm);
 

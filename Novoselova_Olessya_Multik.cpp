@@ -1,4 +1,4 @@
-//=======================================================
+//{=======================================================
 //+  $file   Novoselova_Olessya_Multik.cpp
 //
 //+  $title  Cartoon "SALVATION".
@@ -13,7 +13,7 @@
 //+  $author Novoselova Olesya Anatolyevna computer
 //+          science teacher of MAOU "ML No. 1" of
 //+          Magnitogorsk
-//========================================================
+//}========================================================
 
 # include "LessanLib.h"
 
