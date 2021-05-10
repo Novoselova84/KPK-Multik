@@ -451,9 +451,9 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     txSelectFont   ("Constantia", 40*sizeX, 0, FW_BOLD);
 
     if (deception > 0)
-        txTextOut (x +  45*sizeX, y - 240*sizeY, "Pirates");
+        txTextOut (x + 45*sizeX, y - 240*sizeY, "Pirates");
     else
-        txTextOut (x +  45*sizeX, y - 240*sizeY, "C++");
+        txTextOut (x + 45*sizeX, y - 240*sizeY, "C++");
 
     txSetColor     (TX_GRAY, 3);
     txSetFillColor (shipColor);
@@ -466,9 +466,9 @@ void DrawShip (int x, double y, double sizeX, double sizeY, COLORREF mastColor, 
     txSelectFont ("Gabriola", 100*sizeX, 0, FW_BOLD);
 
     if (deception > 0)
-        txTextOut (x - 110*sizeX, y +  10*sizeY, "Cerberus");
+        txTextOut (x - 110*sizeX, y + 10*sizeY, "Cerberus");
     else
-        txTextOut (x - 110*sizeX, y +  10*sizeY, "Salvation");
+        txTextOut (x - 110*sizeX, y + 10*sizeY, "Salvation");
 
     txSetFillColor (starboardSailColor);
     POINT starboardSail [3] = {{ROUND (x +   35               *sizeX), ROUND (y)},
